@@ -10,7 +10,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Yehudi Menuhin",
                       month: 11,
                       year: 1932},
-                      {song: "",
+                      {song: "BOO",
                       artist: "Richard Tauber",
                       month: 11,
                       year: 1933},
@@ -225,7 +225,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -911,3 +911,45 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+console.log(abbeyRoadRecords[3].song);
+
+var artistArray = [];
+
+_.times((abbeyRoadRecords.length), function(i){
+  if (abbeyRoadRecords[i].month === 11) {
+    // console.log(abbeyRoadRecords[i].artist);
+    artistArray.push(abbeyRoadRecords[i].artist);
+  }
+});
+
+
+// for (i = 0; i < abbeyRoadRecords.length; i++) {
+//   if (abbeyRoadRecords[i].month === 11) {
+//     // console.log(abbeyRoadRecords[i].artist);
+//     artistArray.push(abbeyRoadRecords[i].artist);
+//   }
+// }
+
+
+
+
+console.log(artistArray);
+
+var novemberArtists = function () {
+
+};
+
+console.log(novemberArtists);
+
+
+_.times((artistArray.length), function(i){
+  var artist = artistArray[i];
+  var count = 0;
+  _.times((artistArray.length), function(j){
+    if (artist === artistArray[j]) {
+      count ++;
+      console.log(artist + ' recorded ' + count + ' times in November!');
+    }
+  });
+});
