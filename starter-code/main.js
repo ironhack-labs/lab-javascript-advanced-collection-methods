@@ -20,15 +20,11 @@ function deptSurvey(){
   return opinions;
 }
 
-var employeeSatisfaction = function () {
-  var fullSurvey = [];
-  for (var j = 0; j < 5; j++){
-    fullSurvey.push(deptSurvey());
-  }
-  return fullSurvey;
-};
+// var deptSurvey = _.times(10,chooseOpinion(options));
+// console.log(deptSurvey)
 
-console.log(employeeSatisfaction());
+var employeeSatisfaction = _.times(5,deptSurvey);
+console.log(employeeSatisfaction);
 
 
 //HARRYPOTTER
