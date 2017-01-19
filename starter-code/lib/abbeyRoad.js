@@ -225,7 +225,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -913,21 +913,21 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 2016}];
 
 
-var artists = [], artistsUnique;
+var novemberArtists = [], novemberArtistsUnique;
 
-var novemberArtists = function () {
+var getNovemberArtists = function () {
   var november = _.filter(abbeyRoadRecords, {'month': 11});
   for (var i=0; i < november.length; i++){
-    artists.push(november[i]["artist"]);
+    novemberArtists.push(november[i]["artist"]);
   }
-  artistsUnique = _.uniq(artists);
+  novemberArtistsUnique = _.uniq(novemberArtists);
 
-  return artistsUnique;
+  return novemberArtistsUnique;
 };
 
-console.log(novemberArtists());
+console.log(getNovemberArtists());
 
-function mostRecordedArtist(){
+function mostRecordedArtist(artists,artistsUnique){
   var mostCommonArtist = {
     number: 0,
     name: ""
@@ -952,4 +952,45 @@ function mostRecordedArtist(){
   return mostCommonArtist;
 }
 
-console.log(mostRecordedArtist());
+console.log(mostRecordedArtist(novemberArtists,novemberArtistsUnique));
+
+var allArtists = [], allArtistsUnique;
+
+var getAllArtists = function() {
+  for (var a = 0; a < abbeyRoadRecords.length; a++){
+    allArtists.push(abbeyRoadRecords[a]["artist"]);
+  }
+  allArtistsUnique = _.uniq(allArtists);
+  return allArtists;
+}
+
+console.log(getAllArtists());
+
+console.log(mostRecordedArtist(allArtists,allArtistsUnique));
+
+//Last Beatles
+
+var beatles = function () {
+  var years = [];
+  var getBeatles = _.filter(abbeyRoadRecords, {'artist': "The Beatles"});
+  for (var i=0; i < getBeatles.length; i++){
+    years.push(getBeatles[i]["year"]);
+  }
+  return _.last(years);
+ };
+
+console.log(beatles());
+
+ //Last sixties
+
+ var lastSixties = function() {
+   var sixties = [];
+   for (var b = 0; b < abbeyRoadRecords.length; b++){
+     if (abbeyRoadRecords[b]["year"] > 1959 && abbeyRoadRecords[b]["year"] < 1970) {
+       sixties.push(abbeyRoadRecords[b]);
+     }
+   }
+   return _.last(sixties);
+ }
+
+ console.log(lastSixties());
