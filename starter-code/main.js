@@ -60,7 +60,7 @@ var noRepeatChar = function () {
   }
 };
 
-noRepeatChar();
+// noRepeatChar();
 
 // letters in password
 
@@ -76,7 +76,7 @@ var noLetters = function () {
   }
 };
 
-noLetters();
+// noLetters();
 
 //10 digits
 
@@ -87,4 +87,7 @@ var keep10Digits = function () {
    console.log(_.join(newPassword, ''));
 };
 
-keep10Digits();
+// keep10Digits();
+
+
+//ABBEY ROAD

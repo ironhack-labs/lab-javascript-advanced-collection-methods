@@ -911,3 +911,45 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+var artists = [], artistsUnique;
+
+var novemberArtists = function () {
+  var november = _.filter(abbeyRoadRecords, {'month': 11});
+  for (var i=0; i < november.length; i++){
+    artists.push(november[i]["artist"]);
+  }
+  artistsUnique = _.uniq(artists);
+
+  return artistsUnique;
+};
+
+console.log(novemberArtists());
+
+function mostRecordedArtist(){
+  var mostCommonArtist = {
+    number: 0,
+    name: ""
+  };
+
+  for (var j = 0; j < artistsUnique.length; j++) {
+    var artistCounter = 0, artist;
+    for (var k = 0; k < artists.length; k++) {
+      if (artists[k] === artistsUnique[j]) {
+        artistCounter++;
+        artist = artistsUnique[j];
+      }
+    }
+
+    if (artistCounter > mostCommonArtist["number"]) {
+      mostCommonArtist = {
+        number: artistCounter,
+        name: artist
+      }
+    }
+  }
+  return mostCommonArtist;
+}
+
+console.log(mostRecordedArtist());
