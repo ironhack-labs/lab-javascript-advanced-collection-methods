@@ -225,7 +225,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -911,3 +911,46 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+//
+// var novemberArtist = [], novemberArtistsUnique;
+//
+// var novemberArtists = function (records) {
+//   var november = _.filter(records, {'month': 11});
+//   for (var i = 0; i < november.length; i++) {
+//     novemberArtist.push(november[i].artist);
+//   }
+//   novemberArtistsUnique = _.uniq(novemberArtist);
+//   return novemberArtistUnique;
+// };
+// console.log(novemberArtists(abbeyRoadRecords));
+//
+// function mostRecordedArtist (record) {
+//
+// }
+// // function mostRecordedArtist(artists,artistsUnique){
+// //  var mostCommonArtist = {
+// //    number: 0,
+// //    name: ""
+// //  };
+// //
+// //  for (var j = 0; j < artistsUnique.length; j++) {
+// //    var artistCounter = 0, artist;
+// //    for (var k = 0; k < artists.length; k++) {
+// //      if (artists[k] === artistsUnique[j]) {
+// //        artistCounter++;
+// //        artist = artistsUnique[j];
+// //      }
+// //    }
+// //
+// //    if (artistCounter > mostCommonArtist["number"]) {
+// //      mostCommonArtist = {
+// //        number: artistCounter,
+// //        name: artist
+// //      };
+// //    }
+// //  }
+// //  return mostCommonArtist;
+// // }
+// //
+// // console.log(mostRecordedArtist(novemberArtists,novemberArtistsUnique));
