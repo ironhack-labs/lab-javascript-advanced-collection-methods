@@ -911,3 +911,14 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+// var nov = _.filter(abbeyRoadRecords, _.matchesProperty('month', 11));
+// for(i = 0; i < nov.length; i++){
+//  console.log(nov[i].artist);
+// }
+
+  var artists = _.filter(abbeyRoadRecords, _.matchesProperty(artist));
+  for(i = 0; i < artists.length; i++){
+   console.log(artists[i].artist);
+}
