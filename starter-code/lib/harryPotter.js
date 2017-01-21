@@ -7,4 +7,4 @@
                    "Hermione Granger", "19 September", "Minerva McGonagall",
                    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
-                   "6 December", "Charlie Weasley", "12 December"];
+                   "6 December", "Charlie Weasley", "12 December"];           
