@@ -27,7 +27,7 @@ In the Pull request name, add your name and last names separated by a dash "-"
 
 You'll receive two files under the `lib/` folder. Keep them just how they are, they contain the data you will use in your exercise but they're not intended to be edited. Write your JavaScript in a new file and make sure you require it properly in the provided `html` file.
 
-## The Office
+## Iteration 1 - The Office
 
 ![The Office picture](https://i.imgur.com/9g31Bwo.gif)
 
@@ -68,7 +68,7 @@ var employeeSatisfaction = function () {
 
 :bulb: **Hint:** Look at the Lodash Array methods. Use `_.times` if you need to repeat an action.
 
-## Harry Potter's Birthdays
+## Iteration 2 - Harry Potter's Birthdays
 
 Navigating through Internet, we found a very messy array with the birthdays of Harry Potter's friends and enemies.
 
@@ -92,7 +92,7 @@ var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
 
 3) Create a function that add this array above to the first one you manipulated with the same format. The function should return an array with all the birthdays in pairs.
 
-## The Password Problem
+## Iteration 3 - The Password Problem
 
 Yeah, yeah, to set a password is ALWAYS a big trauma. We will ask for a password to our users and we need to implement validation methods for this password.
 
@@ -136,7 +136,7 @@ var trimPassword = function (password) {
 trimPassword(badPsswd);
 ```
 
-## Abbey Road Studios
+## Iteration 4 - Abbey Road Studios
 
 Abbey Road Studios opened in 1931. Through all these years, the amount of data they've been collecting is huge. We found a [list of recordings made at Abbey Road Studios](https://en.wikipedia.org/wiki/List_of_recordings_made_at_Abbey_Road_Studios) but we are not sure if it is actually an important place for music or if its fame is just a result of the hype created by The Beatles.
 
