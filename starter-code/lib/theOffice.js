@@ -10,7 +10,18 @@ function randomOpinion(array) {
   return _.sample(array);
 }
 
-var survey = [];
-for (var i = 0; i < 10; i++) {
-  survey.push(randomOpinion(opinions));
+var departmentSurvey = [];
+
+function pushOpinionsToArray(finalArray, opinionsArray, times) {
+  for (var i = 0; i < times; i++) {
+    finalArray.push(randomOpinion(opinionsArray));
+  }
+  return finalArray;
 }
+
+var totalSurvey = [];
+
+for (var i = 0; i < 5; i++) {
+  totalSurvey.push(pushOpinionsToArray(departmentSurvey, opinions, 2));
+}
+console.log(totalSurvey);
