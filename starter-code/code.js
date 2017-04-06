@@ -1,25 +1,31 @@
 //Iteration 1 The Office
+
 var opinions = [ "This is the best job ever",
 "Satisfied",
 "At least I get paid",
 "I'm looking for another job",
 "I don't want to answer"];
 
-function randOpinions(){
-	return _.sample(opinions);
-}
+var employeeSatisfaction = function () {
 
-function fillNewArray(){
+	var randOpinions = function (){
+		return _.sample(opinions);
+	}
 
-	return _.times(10, randOpinions);
+	var fillNewArray = function(){
 
-}
+		return _.times(10, randOpinions);
 
-function fillNewArray2(){
-	return _.times(5, fillNewArray)
-}
+	}
 
-fillNewArray2();
+	var fillNewArray2 = function(){
+		return _.times(5, fillNewArray)
+	}
+
+	return fillNewArray2();
+};
+
+console.log(employeeSatisfaction());
 
 //Iteration2 harry Potter's Birthday
 
@@ -45,38 +51,44 @@ function addToArray(array1, array2){
 	return _.concat(groupArray(array1), groupArray(array2))
 }
 
-addToArray(birthdays, moreBirthdays);
+console.log(addToArray(birthdays, moreBirthdays));
 
 
 //Iteration3 The Password Problem 
 
-function password(){
-	var pwd = prompt("Please give me your password");
+//exercise 1
+var goodPsswd = "1234567890";
+var badPsswd = "1123456";
 
-	return _.uniq(pwd).length === pwd.length ? "your password is fine" : "your password has a duplicate"
+var noRepeatChar = function (pwd){
+	var b = _.uniq(pwd).length === pwd.length ? "your password is fine" : "your password has a duplicate";
+
+	console.log(b)
+}
+noRepeatChar(goodPsswd);
+noRepeatChar(badPsswd);
+
+//exercise 2
+var goodPsswd = "1234567890";
+var badPsswd = "1a234567890";
+
+var onlyNumbers = function password2(pwd){
+	var result = _.toNumber(pwd) ? "your password is fine" : "your password has a character";
+
+	console.log(result);
 }
 
+onlyNumbers(goodPsswd);
+onlyNumbers(badPsswd);
 
-password();
+//exercise 3
+var goodPsswd = "1234567890";
+var badPsswd = "12345678901234567890";
 
-
-function password2(){
-	var pwd = prompt("Please give me your password");
-
-	return _.toNumber(pwd) ? "your password is fine" : "your password has a character";
-}
-
-
-password2();
-
-function password3(){
-	var pwd = prompt("Please give me your password");
-
+var trimPassword = function(pwd){
 	return _.join(_.slice(pwd, 0, 10), "");
 }
-
-
-password3();
+trimPassword(badPsswd);
 
 //Iteration4 abbey Road Studios
 
@@ -102,7 +114,7 @@ var novemberArtists = function () {
 	return _.findKey(test2, _.partial(_.isEqual, test3));
 };
 
-novemberArtists();
+console.log(novemberArtists());
 
 var bestArtist = function () {
 	var test2 = _.countBy(abbeyRoadRecords, "artist");
@@ -119,7 +131,7 @@ var bestArtist = function () {
 	return _.findKey(test2, _.partial(_.isEqual, test3));
 };
 
-bestArtist();
+console.log(bestArtist());
 
 
 var novemberArtists = function () {
@@ -159,7 +171,7 @@ var bestArtist = function () {
 	return _.findKey(countList, _.partial(_.isEqual, maxTimes));
 };
 
-bestArtist();
+console.log(bestArtist());
 
 
 var lastBeatlesSong = function () {
@@ -169,4 +181,4 @@ var lastBeatlesSong = function () {
 	return _.maxBy(songs, "year")
 };
 
-lastBeatlesSong();
+console.log(lastBeatlesSong());
