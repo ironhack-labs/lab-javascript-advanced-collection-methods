@@ -24,13 +24,13 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1936},
                       {song: "I Can't Give You Anything but Love",
                       artist: "Adelaide Hall and Fats Waller",
-                      month: 08,
+                      month: 8,
                       year: 1938},
                       {song: "Symphony No. 5",
                       artist: "Vaughan Williams",
                       year: 1943},
                       {artist: "Glenn Miller and Dinah Shore",
-                      month: 09,
+                      month: 9,
                       year: 1944},
                       {song: "Quintet for Piano and Winds",
                       artist: "Dennis Brain Wind Ensemble with Colin Horsley",
@@ -911,3 +911,87 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+// Exercise 4
+
+// November looks like a good month: In the 30s and 60s, they used to gather information about the months when the recordings were made. Get the artist who recorded the most in November in Abbey Road.
+
+var novemberArtists = function (arr) {
+
+var novemberSongs = _.filter(arr, function(elem){
+
+  if (_.has(elem, 'month') && elem.month === 11) {
+     return true;
+   } else {
+     return false;
+   }
+ });
+
+
+  return countArtist(novemberSongs);
+}
+
+
+function countArtist (arr) {
+ var artistCounts = _.countBy(arr, 'artist');
+
+var maxSongs = 0;
+ var maxArtist = '';
+
+ for (var key in artistCounts) {
+    if(artistCounts[key] > maxSongs) {
+       maxSongs = artistCounts[key];
+       maxArtist = key;
+     }
+    
+  }
+
+ return maxArtist;
+
+}
+
+
+console.log(novemberArtists(abbeyRoadRecords));
+
+// Artists like to repeat: Get the artist who recorded the most times in Abbey Road.
+
+var bestArtist = function (arr) {
+return countArtist(arr);
+};
+
+console.log(bestArtist(abbeyRoadRecords));
+
+// The Beatles and Abbey Road: When did the four of Liverpool recorded their last song in Abbey Road Studios?
+
+var lastBeatlesSong = function (arr) {
+
+var beatlesSongs = _.filter(arr, function(elem) {
+   return _.has(elem, 'artist') && elem.artist == "The Beatles";
+ });
+
+return _.maxBy(beatlesSongs, 'year');
+};
+
+
+console.log(lastBeatlesSong(abbeyRoadRecords));
+
+
+// Sixties craziness: The sixties were a crazy decade. Could you retrieve the last song it was recorded in Abbey Road Studios in the decade of 1960s?
+
+var sixtiesSong = function (arr) {
+ var sixtiesSongs = _.filter(arr, function(elem) {
+   return  _.has(elem, 'year') && elem.year < 1970 && elem.year > 1959;
+ });
+
+var maxYear = _.maxBy(sixtiesSongs, 'year');
+
+var lastYearSongs = _.filter(arr, function(elem) {
+   return  _.has(elem, 'year') && elem.year===maxYear.year;
+ });
+
+var maxMonth = _.maxBy(lastYearSongs, 'month');
+return maxMonth;
+};
+
+console.log(sixtiesSong(abbeyRoadRecords));
