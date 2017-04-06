@@ -9,3 +9,7 @@ var opinions = [
 function randomOpinion(array) {
   return _.sample(array);
 }
+
+var survey = [];
+
+survey.push(randomOpinion(opinions));
