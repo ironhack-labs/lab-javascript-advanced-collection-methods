@@ -1,4 +1,4 @@
- var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
+var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
                   "Ron Weasley", "1 March", "Remus Lupin", "10 March",
                   "Fred & George Weasley", "1 April", "Pomona Sprout", "15 May",
                    "Draco Malfoy", "5 June", "Dobby", "28 June",
