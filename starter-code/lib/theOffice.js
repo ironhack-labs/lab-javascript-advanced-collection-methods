@@ -11,5 +11,6 @@ function randomOpinion(array) {
 }
 
 var survey = [];
-
-survey.push(randomOpinion(opinions));
+for (var i = 0; i < 10; i++) {
+  survey.push(randomOpinion(opinions));
+}
