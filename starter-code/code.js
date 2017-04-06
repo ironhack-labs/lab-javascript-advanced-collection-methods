@@ -93,45 +93,43 @@ trimPassword(badPsswd);
 //Iteration4 abbey Road Studios
 
 var novemberArtists = function () {
-	var test = [];
+	var artistList = [];
 	_.each(abbeyRoadRecords, function(element){
-
+		
 		if (_.has(element, "month") && element.month === 11){
-			test.push(element.artist);
+			artistList.push(element.artist);
+		}});
+	var countList = _.countBy(artistList);
+	var maxTimes = 0;
+	
+	for (var key in countList){
+		
+		if(maxTimes<countList[key]){
+			maxTimes=countList[key];
 		}
-
-	});
-	var test2 = _.countBy(test);
-	var test3 = 0;
-
-	for (var key in test2){
-
-		if(test3<test2[key]){
-			test3=test2[key];
-		}
-
+		
 	}
-	return _.findKey(test2, _.partial(_.isEqual, test3));
+	return _.findKey(countList, _.partial(_.isEqual, maxTimes));
 };
 
-console.log(novemberArtists());
+novemberArtists();
 
 var bestArtist = function () {
-	var test2 = _.countBy(abbeyRoadRecords, "artist");
+	var countList = _.countBy(abbeyRoadRecords, "artist");
 
-	var test3 = 0;
-
-	for (var key in test2){
-
-		if(test3<test2[key]){
-			test3=test2[key];
+	var maxTimes = 0;
+	
+	for (var key in countList){
+		
+		if(maxTimes<countList[key]){
+			maxTimes=countList[key];
 		}
-
+		
 	}
-	return _.findKey(test2, _.partial(_.isEqual, test3));
+	return _.findKey(countList, _.partial(_.isEqual, maxTimes));
 };
 
-console.log(bestArtist());
+bestArtist();
 
 
 var lastBeatlesSong = function () {
@@ -144,7 +142,7 @@ var lastBeatlesSong = function () {
 console.log(lastBeatlesSong());
 
 var sixtiesSong = function () {
-  var songs = _.filter(abbeyRoadRecords, function(el){
+	var songs = _.filter(abbeyRoadRecords, function(el){
 		return _.has(el, "year") && el.year === 1959;
 	});
 	return _.maxBy(songs, "year").song
