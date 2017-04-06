@@ -1,19 +1,29 @@
-var abbeyRoadRecords = [{song: "Land of Hope and Glory",
-                      artist: "Sir Edward Elgar",
-                      month: 11,
-                      year: 1931},
-                      {song: "Elgar violin concerto",
-                      artist: "Yehudi Menuhin",
-                      month: 07,
-                      year: 1932},
-                      {song: "Piano Sonata, Funerailles",
-                      artist: "Yehudi Menuhin",
-                      month: 11,
-                      year: 1932},
-                      {song: "",
-                      artist: "Richard Tauber",
-                      month: 11,
-                      year: 1933},
+var abbeyRoadRecords =
+[
+    {
+    song: "Land of Hope and Glory",
+    artist: "Sir Edward Elgar",
+    month: 11,
+    year: 1931
+},
+{
+    song: "Elgar violin concerto",
+    artist: "Yehudi Menuhin",
+    month: 07,
+    year: 1932
+},
+{
+    song: "Piano Sonata, Funerailles",
+    artist: "Yehudi Menuhin",
+    month: 11,
+    year: 1932
+},
+{
+    song: "",
+    artist: "Richard Tauber",
+    month: 11,
+    year: 1933
+},
                       {song: "Suits No. 1 & 2 Johann Sebastian Bach's Cello Suites",
                       artist: "Pablo Casals",
                       month: 11,
@@ -911,3 +921,5 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+module.exports = abbeyRoadRecords;
