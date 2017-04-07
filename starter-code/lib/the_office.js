@@ -1,4 +1,4 @@
-var _ = require('lodash');
+
 var opinions = [ "This is the best job ever",
                  "Satisfied",
                  "At least I get paid",
@@ -11,7 +11,8 @@ function randomizeOpinions(){
  var randomIndex = Math.floor(Math.random()*opinions.length);
  return opinions[randomIndex];
 }
-randomizeOpinions(opinions);
+
+console.log(randomizeOpinions(opinions));
 
 var randomOpinion = randomizeOpinions();
 function departmentOpinions(numberOfPeople){
@@ -20,7 +21,7 @@ function departmentOpinions(numberOfPeople){
   return randomizeOpinions();
  }));
 }
-departmentOpinions();
+console.log(departmentOpinions());
 
 function employeeSatisfaction (numberOfDepartments,numberOfPeople){
 

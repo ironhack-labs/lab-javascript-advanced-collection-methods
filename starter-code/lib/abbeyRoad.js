@@ -1,4 +1,4 @@
-var _ = require("lodash");
+
 
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
@@ -968,4 +968,4 @@ var sixtiesSong = function (album) {
   return _.last(sixties.sort(function(a, b){ return a.month - b.month;})).song;
 };
 //Remember to execute the function to actually assing the value to the var.
-sixtiesSong(abbeyRoadRecords);
+console.log(sixtiesSong(abbeyRoadRecords));
