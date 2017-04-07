@@ -61,12 +61,12 @@ var goodPsswd = "1234567890";
 var badPsswd = "1123456";
 
 var noRepeatChar = function (pwd){
-	var b = _.uniq(pwd).length === pwd.length ? "your password is fine" : "your password has a duplicate";
+	var result = _.uniq(pwd).length === pwd.length ? "your password is fine" : "your password has a duplicate";
 
-	console.log(b)
+	return result;
 }
-noRepeatChar(goodPsswd);
-noRepeatChar(badPsswd);
+console.log("Good unique Password: ", noRepeatChar(goodPsswd));
+console.log("Bad unique Password: ", noRepeatChar(badPsswd));
 
 //exercise 2
 var goodPsswd = "1234567890";
@@ -75,11 +75,11 @@ var badPsswd = "1a234567890";
 var onlyNumbers = function password2(pwd){
 	var result = _.toNumber(pwd) ? "your password is fine" : "your password has a character";
 
-	console.log(result);
+	return result;
 }
 
-onlyNumbers(goodPsswd);
-onlyNumbers(badPsswd);
+console.log("Good unique Password: ", onlyNumbers(goodPsswd));
+console.log("Bad unique Password: ", onlyNumbers(badPsswd));
 
 //exercise 3
 var goodPsswd = "1234567890";
@@ -88,7 +88,7 @@ var badPsswd = "12345678901234567890";
 var trimPassword = function(pwd){
 	return _.join(_.slice(pwd, 0, 10), "");
 }
-trimPassword(badPsswd);
+console.log("Good 10 Words Password: ",trimPassword(badPsswd));
 
 //Iteration4 abbey Road Studios
 
@@ -112,7 +112,7 @@ var novemberArtists = function () {
 	return _.findKey(countList, _.partial(_.isEqual, maxTimes));
 };
 
-novemberArtists();
+console.log("The most recuring artist in November is: ", novemberArtists());
 
 var bestArtist = function () {
 	var countList = _.countBy(abbeyRoadRecords, "artist");
@@ -129,7 +129,7 @@ var bestArtist = function () {
 	return _.findKey(countList, _.partial(_.isEqual, maxTimes));
 };
 
-bestArtist();
+console.log("The artist with the most records is: ", bestArtist());
 
 
 var lastBeatlesSong = function () {
@@ -139,7 +139,7 @@ var lastBeatlesSong = function () {
 	return _.maxBy(songs, "year").year;
 };
 
-console.log(lastBeatlesSong());
+console.log( "The last Beatles songs was in: ", lastBeatlesSong());
 
 var sixtiesSong = function () {
 	var songs = _.filter(abbeyRoadRecords, function(el){
@@ -148,4 +148,4 @@ var sixtiesSong = function () {
 	return _.last(songs, "year").song;
 };
 
-console.log(sixtiesSong());
+console.log("The last Beatles song is: ", sixtiesSong());
