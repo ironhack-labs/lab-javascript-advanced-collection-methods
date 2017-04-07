@@ -136,16 +136,16 @@ var lastBeatlesSong = function () {
 	var songs = _.filter(abbeyRoadRecords, function(el){
 		return _.has(el, "artist") && el.artist === "The Beatles";
 	});
-	return _.maxBy(songs, "year").song
+	return _.maxBy(songs, "year").year;
 };
 
 console.log(lastBeatlesSong());
 
 var sixtiesSong = function () {
 	var songs = _.filter(abbeyRoadRecords, function(el){
-		return _.has(el, "year") && el.year === 1969;
+		return _.has(el, "year") && el.year < 1970 && el.year > 1959;
 	});
-	return _.maxBy(songs, "year").song
+	return _.last(songs, "year").song;
 };
 
 console.log(sixtiesSong());
