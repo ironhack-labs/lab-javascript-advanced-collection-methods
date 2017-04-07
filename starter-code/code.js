@@ -95,19 +95,19 @@ trimPassword(badPsswd);
 var novemberArtists = function () {
 	var artistList = [];
 	_.each(abbeyRoadRecords, function(element){
-		
+
 		if (_.has(element, "month") && element.month === 11){
 			artistList.push(element.artist);
 		}});
 	var countList = _.countBy(artistList);
 	var maxTimes = 0;
-	
+
 	for (var key in countList){
-		
+
 		if(maxTimes<countList[key]){
 			maxTimes=countList[key];
 		}
-		
+
 	}
 	return _.findKey(countList, _.partial(_.isEqual, maxTimes));
 };
@@ -118,13 +118,13 @@ var bestArtist = function () {
 	var countList = _.countBy(abbeyRoadRecords, "artist");
 
 	var maxTimes = 0;
-	
+
 	for (var key in countList){
-		
+
 		if(maxTimes<countList[key]){
 			maxTimes=countList[key];
 		}
-		
+
 	}
 	return _.findKey(countList, _.partial(_.isEqual, maxTimes));
 };
@@ -143,7 +143,7 @@ console.log(lastBeatlesSong());
 
 var sixtiesSong = function () {
 	var songs = _.filter(abbeyRoadRecords, function(el){
-		return _.has(el, "year") && el.year === 1959;
+		return _.has(el, "year") && el.year === 1969;
 	});
 	return _.maxBy(songs, "year").song
 };
