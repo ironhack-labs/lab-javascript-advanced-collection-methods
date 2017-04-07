@@ -1,3 +1,5 @@
+
+
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -24,13 +26,13 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1936},
                       {song: "I Can't Give You Anything but Love",
                       artist: "Adelaide Hall and Fats Waller",
-                      month: 08,
+                      month: 8,
                       year: 1938},
                       {song: "Symphony No. 5",
                       artist: "Vaughan Williams",
                       year: 1943},
                       {artist: "Glenn Miller and Dinah Shore",
-                      month: 09,
+                      month: 9,
                       year: 1944},
                       {song: "Quintet for Piano and Winds",
                       artist: "Dennis Brain Wind Ensemble with Colin Horsley",
@@ -225,7 +227,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -911,3 +913,59 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+var novemberArtists = function (album) {
+//your code
+  return _.filter(album, function(element){
+    if(_.has(element, ["month"])){
+      if(element.month == "11" && element.year > 1929 && element.year < 1940) return element;
+                            }
+                          });
+                      };
+
+//Remember to execute the function to actually assing the value to the var.
+console.log(novemberArtists(abbeyRoadRecords));
+
+var bestArtist = function (album) {
+//your code
+  var artists = _.map(album, function(element){
+    return element.artist;
+    });
+  var longest =_.values(_.groupBy(artists, length));
+
+  var currentMax = 0, i = 0;
+  var result = _.each(longest, function(element, index){
+    if(element.length > currentMax){
+      currentMax = element.length;
+      i = index;
+                          }
+            });
+      return _.uniq(longest[i])[0];
+
+    };
+//Remember to execute the function to actually assing the value to the var.
+console.log(bestArtist(novemberArtists(abbeyRoadRecords)));
+
+
+var lastBeatlesSong = function (album) {
+  //your code
+  var beatles = _.filter(album, function(element){
+    if(element.artist == "The Beatles") return element;
+  });
+  var lastSong = beatles.sort(function(a, b){
+    return a.year - b.year;
+  });
+  return _.last(lastSong).song;
+};
+
+
+var sixtiesSong = function (album) {
+  //your code
+  var sixties = _.filter(album, function(element){
+    if(element.year == 1969) return element;
+  });
+
+  return _.last(sixties.sort(function(a, b){ return a.month - b.month;})).song;
+};
+//Remember to execute the function to actually assing the value to the var.
+console.log(sixtiesSong(abbeyRoadRecords));
