@@ -11,7 +11,34 @@
  ];
 
 
+ var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
+                     "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
 
+function getTidy(array) {
+  var newArr = _.chunk(array, 2);
+  return newArr;
+}
 
+////// Here's an alternative way ///////
 
- console.log(birthdays);
+//   function groupAndAdd(ogArr, secArr){
+//   var newdefArr = secArr.concat(ogArr);
+//   return getTidy(newdefArr);
+//  }
+
+//   console.log(groupAndAdd(birthdays, moreBirthdays));
+
+//////           END           ////////
+
+var newBirthdays = getTidy(birthdays);
+
+var newMoreBirthdays = getTidy(moreBirthdays);
+
+function putArrayOnArray(first, second) {
+  var lastArr = first.concat(second);
+  return lastArr;
+}
+
+var ultimateAarray = putArrayOnArray(newMoreBirthdays, newBirthdays);
+
+console.log(ultimateAarray);
