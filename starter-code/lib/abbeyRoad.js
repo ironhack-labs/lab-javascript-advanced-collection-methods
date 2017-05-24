@@ -911,3 +911,25 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+                      // Abbey Road Studios
+                      // November is a good month
+                      var novemberArtists = function () {
+                        return _.uniq(_.map(_.filter(abbeyRoadRecords, ["month", 11]), "artist"));
+                      };
+                      console.log(novemberArtists());
+                      // Artist who recorded the most times
+                      var bestArtist = function () {
+                        return _.first(_.orderBy(_.groupBy(abbeyRoadRecords, "artist"), ['Array', 'length'], ['asc', 'desc']))[0].artist;
+                      };
+                      console.log(bestArtist());
+                      // The Beatles and Abbey Road
+                      var lastBeatlesSong = function () {
+                        return _.orderBy(_.filter(abbeyRoadRecords, ["artist", "The Beatles"]), 'year', ['desc'])[0].year;
+                      };
+                      console.log(lastBeatlesSong());
+                      // Sixties Crazyness
+                      var sixtiesSong = function () {
+                        return _.orderBy(_.filter(abbeyRoadRecords, ["year", 1969]), 'month', ['desc'])[0];
+                      };
+                      console.log(sixtiesSong().artist + " recorded " + sixtiesSong().song);
