@@ -4,24 +4,19 @@ var opinions = [ "This is the best job ever",
                  "I'm looking for another job",
                  "I don't want to answer"];
 
-//Iteraccion 1
+// Lodash no permite el paso de argumentos en las funciones que se utilizan
 
-function samples (a) {
-    var opinionSamples = _.sample(a);
-    return opinionSamples;
+function samples () {
+  return _.sample(opinions);
 }
 
-//Itraccion 2
 
-var collectedOpinions=[];
-
-function collector (b) {
-  collectedOpinions.push(collectedOpinions);
+function collection (){
+  return _.times(9, samples);
 }
 
-function colection (c){
-  var times = _.times(10, collector);
-  console.log(collectedOpinions);
+function employeeSatisfaction (){
+  return _.times(5, collection);
 }
 
-colection(opinions);
+console.log(employeeSatisfaction());
