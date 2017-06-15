@@ -8,19 +8,6 @@ var opinions = [ "This is the best job ever",
 
 var office = [];
 
-function generateOpinion (array) {
-  office.push(_.sample(array));
-}
-
-/*generateOpinion(opinions);
-console.log(office);
-
-function repeatGenerate (array) {
-  generateOpinion(array).repeat(10);
-
-}
-repeatGenerate(opinions);
-console.log(office);*/
-
-_.times(10, generateOpinion(opinions));
+_.times(10, function() {
+office.push(_.sample(opinions));});
 console.log (office);
