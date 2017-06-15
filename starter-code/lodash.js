@@ -32,18 +32,13 @@ function missingBday() {
 console.log(_.concat(organizedBday(), missingBday()));
 
 //ITERATION 3
+//different characters
 var goodPsswd = "1234567890";
 var badPsswd = "1123456";
 
 var noRepeatChar = function (password) {
-  var result = _.chunk(password, password.length);
-  var response = _.flatten(result);
-  var s = _.uniq(response);
-  if (s.length < response.length) {
-    return "All characters must be different";
-  } else {
-    return "Good password";
-  }
+  var result = _.uniq(password);
+  return result.length === password.length;
 };
 
 noRepeatChar(goodPsswd);
