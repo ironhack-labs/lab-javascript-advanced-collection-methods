@@ -1,3 +1,4 @@
+//Iteration 4
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -911,3 +912,92 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+//Ejercicio 1
+var novemberArtists = function (abbeyRoadRecords) {
+
+  var songs = _.filter(abbeyRoadRecords, function(o) {
+    if (typeof o !== "undefined" ) {
+      if (typeof(o.month) !== "undefined" ) {
+        return o.month === 11
+      } else {
+        return false;
+      }
+    }
+  });
+
+  var songsByArtists =_.countBy(songs, function(o) {
+    return o.artist;
+  });
+
+  var values = _.values(songsByArtists);
+  var keys = _.keys(songsByArtists);
+
+
+  var highestIndex =_.indexOf(values, _.max(values));
+
+  return keys[highestIndex];
+
+  //your code
+};
+console.log("The november Artists is :" + novemberArtists(abbeyRoadRecords));
+//Remember to execute the function to actually assing the value to the var.
+
+//Ejercicio 2
+var bestArtist = function (abbeyRoadRecords) {
+  //your code
+  var bestArtistArray =_.countBy(abbeyRoadRecords, function(o) {
+    if (typeof o !== "undefined" ) {
+      if (typeof(o.artist) !== "undefined" ) {
+        return o.artist;
+      }
+    }
+  });
+
+  var values = _.values(bestArtistArray);
+  var keys = _.keys(bestArtistArray);
+
+
+  var highestIndex =_.indexOf(values, _.max(values));
+
+  return keys[highestIndex];
+};
+
+console.log("The Artists is :" + bestArtist(abbeyRoadRecords));
+//Remember to execute the function to actually assing the value to the var.
+
+//Ejercicio 3
+var lastBeatlesSong = function (abbeyRoadRecords) {
+  //your code
+  var song = _.maxBy(abbeyRoadRecords, function(o) {
+      if (typeof o !== "undefined" ) {
+        if (typeof(o.song) !== "undefined" ) {
+          if(o.artist === "The Beatles"){
+            return o.year;
+          }
+        }
+      }
+     });
+
+  return song;
+};
+console.log("The last by Beatles is :", lastBeatlesSong(abbeyRoadRecords));
+//Remember to execute the function to actually assing the value to the var.
+
+
+var sixtiesSong = function (abbeyRoadRecords) {
+  //your code
+  //your code
+  var song = _.maxBy(abbeyRoadRecords, function(o) {
+      if (typeof o !== "undefined" ) {
+        if (typeof(o.song) !== "undefined" ) {
+          if(o.year <= 1969){
+            return o.year;
+          }
+        }
+      }
+     });
+
+  return song;
+};
+
+console.log("The last song is :", sixtiesSong(abbeyRoadRecords));
