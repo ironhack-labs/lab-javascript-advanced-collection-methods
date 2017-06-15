@@ -6,8 +6,28 @@ var opinions = [ "This is the best job ever",
                  "I'm looking for another job",
                  "I don't want to answer"];
 
-var office = [];
+var department = [];
 
-_.times(10, function() {
-office.push(_.sample(opinions));});
-console.log (office);
+function chooseOpinion() {
+  return department.push(_.sample(opinions));
+}
+chooseOpinion();
+
+function repeatTen() {
+  return _.times(10, chooseOpinion);
+}
+repeatTen();
+
+var officeSatisfaction = [];
+
+function pushDepartment() {
+ return officeSatisfaction.push(department);
+}
+pushDepartment();
+
+function repeatFive() {
+ return _.times(5, pushDepartment);
+}
+repeatFive();
+
+console.log (officeSatisfaction);
