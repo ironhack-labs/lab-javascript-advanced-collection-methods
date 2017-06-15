@@ -24,17 +24,13 @@ function survey(){
     return opinion;
 }
 
-console.log(survey());
-
 function departments(){
   var global=[];
-  var counter=1;
   _.times(5, function(){
-    var department = _.set(department, "name", "Department"+counter);
-    _.set(department, "Survey", survey());
-    global.push(department);
-    counter++;
+   var partialArray = survey();
+   global.push(partialArray);
   });
   return global;
 }
-console.log(departments())
+
+console.log(departments());
