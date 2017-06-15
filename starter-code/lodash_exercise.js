@@ -1,5 +1,5 @@
 /*Opinions*/
-/*
+
 var opinions = [ "This is the best job ever",
                  "Satisfied",
                  "At least I get paid",
@@ -11,7 +11,6 @@ function randomOpinion(opinions) {
 };
 
 function departmentOpinions(array){
-  //console.log(randomOpinion(array));
   return _.times(10, function(){
     return randomOpinion(array);
   });
@@ -23,8 +22,10 @@ function companyOpinions(array){
   })
 }
 
+console.log('****Below are the company answers.****')
 console.log(companyOpinions(opinions));
-*/
+console.log('****Company answers end here.****')
+
 
 /* Password problems */
 var goodPsswd = "1234567890";
