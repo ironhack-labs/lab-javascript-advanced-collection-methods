@@ -11,6 +11,7 @@
 
 
 function sortBirthdates (birthdays) {
+  //Ejercicio 1
   return  _.chunk(birthdays, 2)
 }
 
@@ -21,6 +22,7 @@ var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
                      "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
 
 function mergeBirthdayArrays (birthdays, moreBirthdays) {
+    //Ejercicio 2 y 3
     return _.chunk(_.concat(birthdays, moreBirthdays), 2)
 }
 
