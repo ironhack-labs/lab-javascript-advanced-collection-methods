@@ -4,22 +4,19 @@ var opinions = [ "This is the best job ever",
                  "I'm looking for another job",
                  "I don't want to answer"];
 
-var newArray = [];
 
 function buildMatrix () {
-  newArray.push(_.sample(opinions));
-  return newArray
+  return _.sample(opinions);
 }
 
 function createOpinions () {
-  return _.times(10, buildMatrix)
+   return _.times(10, buildMatrix)
 }
 
 var employeeSatisfaction = function () {
   // Steps 2, 3 and 4 here
-  _.times(5, createOpinions)
-
-  return newArray;
+  return _.times(5, createOpinions)
 };
 
-console.log(newArray)
+var employeeSatisfactions = employeeSatisfaction()
+console.log(employeeSatisfactions)
