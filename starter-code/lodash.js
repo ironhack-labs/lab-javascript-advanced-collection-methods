@@ -36,13 +36,14 @@ var goodPsswd = "1234567890";
 var badPsswd = "1123456";
 
 var noRepeatChar = function (password) {
-  var result = _.chunk(password.length, password);
+  var result = _.chunk(password, password.length);
   var response = _.flatten(result);
   var s = _.uniq(response);
-  if (response.length < s.length) {
+  if (s.length < response.length) {
     return "All characters must be different";
+  } else {
+    return "Good password";
   }
-
 };
 
 noRepeatChar(goodPsswd);
