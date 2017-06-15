@@ -4,16 +4,41 @@ var opinions = ["This is the best job ever",
   "I'm looking for another job",
   "I don't want to answer"
 ];
-var opinionFinal;
-var opinionArray = [];
-var random = [];
-var employeeSatisfaction = function() {
-  random = _.sample(opinions);
 
-  opinionFinal = _.times(10, random);
-  opinionFinal.push(opinionArray);
-
-  return random;
-  console.log(opinion);
-
+employeeSatisfaction = function() {
+  return _.sample(opinions);
 };
+
+function pushTenRandomPosition() {
+  return _.times(10, employeeSatisfaction);
+}
+
+var result = function pushFiveRandomPosition() {
+  return _.times(5, pushTenRandomPosition);
+};
+
+console.log(result());
+///////2////////
+function organizedBday() {
+  return _.chunk(birthdays, 2);
+}
+
+function missingBday() {
+  var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
+                       "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
+
+  return _.chunk(moreBirthdays, 2);
+}
+
+console.log(_.concat(organizedBday(), missingBday()));
+/////3/////
+var goodPsswd = "1234567890";
+var badPsswd = "1123456";
+
+var noRepeatChar = function (password) {
+  var result = _.uniq(password);
+  return result.length === password.length;
+};
+
+noRepeatChar(goodPsswd);
+noRepeatChar(badPsswd);
