@@ -32,12 +32,27 @@ function missingBday() {
 
 console.log(_.concat(organizedBday(), missingBday()));
 /////3/////
-var goodPsswd = "1234567890";
+/*var goodPsswd = "1234567890";
 var badPsswd = "1123456";
 
 var noRepeatChar = function (password) {
   var result = _.uniq(password);
   return result.length === password.length;
+};
+
+noRepeatChar(goodPsswd);
+noRepeatChar(badPsswd);*/
+var goodPsswd = "1234567890";
+var badPsswd = "1123456";
+var noRepeatChar = function(password) {
+  var uniqPassword = _.uniq(password);
+  console.log(uniqPassword);
+  var stringPassword = _.join(uniqPassword, "");
+  if (stringPassword === password) {
+    console.log("Contraseña aceptada, puede continuar");
+  } else {
+    console.log("La contraseña introducida no es correcta");
+  }
 };
 
 noRepeatChar(goodPsswd);
