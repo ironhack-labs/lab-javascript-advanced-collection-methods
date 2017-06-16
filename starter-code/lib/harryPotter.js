@@ -1,4 +1,4 @@
-var _ = require('lodash');
+//var _ = require('lodash');
 
 
  var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
