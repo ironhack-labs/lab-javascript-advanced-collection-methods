@@ -1,4 +1,5 @@
-
+//check script
+alert("Welcome user to our exercise");
 // 1. Employee opitnions:
 var opinions = [ "This is the best job ever",
                  "Satisfied",
@@ -41,7 +42,7 @@ pushFiveTimesTheTenTimesAlreadyPushed(randomiser,opinions);
                    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
                    "6 December", "Charlie Weasley", "12 December"];
-
+                   
 var birthdayPair = _.chunk(birthdays, 2);
 
 
@@ -78,7 +79,7 @@ var noRepeatChar = function (password) {
 noRepeatChar(goodPsswd);
 noRepeatChar(badPsswd);
 
-//3.2
+//3.2 
 
 var goodPsswd = "1234567890";
 var badPsswd = "1a234567890";
@@ -97,7 +98,7 @@ console.log(onlyNumbers(goodPsswd));
 console.log(onlyNumbers(badPsswd));
 
 
-//3.3
+//3.3 */
 
 
 
@@ -111,7 +112,7 @@ var trimPassword = function (password) {
 console.log(trimPassword(badPsswd));
 
 
-//ITERATION 4
+//ITERATION 4 
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -1027,20 +1028,72 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 2016}];
 
 
-
+//4.1
 
 var novemberArtists = function (abbeyRoadRecords) {
   var justNovember = abbeyRoadRecords.filter(function(element) {
     return element.month === 11;
     })
-
+  
   var myArtists = justNovember.map(function(element) {
     return element.artist;
-
+  
   })
-
+  
   return _.union(myArtists);
-
+  
 }
 
 console.log(novemberArtists(abbeyRoadRecords));
+  
+
+//4.2
+var bestArtist = function (abbeyRoadRecords) {
+  
+  
+};
+
+//4.3
+
+var lastBeatlesSong = function (abbeyRoadRecords) {
+    var justBeatles = abbeyRoadRecords.filter(function(element) {
+    return element.artist === "The Beatles";
+    })
+  
+  justBeatles.sort(function(song1,song2) {
+  return song1.year - song2.year;
+  })
+  
+  return _.head(justBeatles.reverse());
+  
+};
+
+console.log(lastBeatlesSong(abbeyRoadRecords));
+
+
+//4.4 
+
+var sixtiesSong = function (abbeyRoadRecords) {
+  var justSixties = abbeyRoadRecords.filter(function(element) {
+    return element.year === 1969;
+    })
+  
+  justSixties.sort(function (song1,song2) {
+    return song1.month > song2.month;
+  })
+  
+  return _.last(justSixties);
+ 
+};
+
+
+console.log(sixtiesSong(abbeyRoadRecords));
+
+
+
+
+
+
+
+
+
