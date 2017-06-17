@@ -911,3 +911,71 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+console.log("Iteration 4: Abbey Road");
+//November artist
+
+var novemberArtists = function () {
+  var byArtist = _.countBy(abbeyRoadRecords, function(value){
+    if(_.has(value, 'month') && value.month == 11) return value.artist;
+  });
+
+  var artist;
+  _.reduce(byArtist, function(accumulator, value, key, collection){
+    if(key !== "undefined" && value > accumulator){
+      artist = key;
+      return value;
+    }else{
+      return 0;
+    }
+  }, 0);
+
+  return artist;
+};
+console.log("The artis with more november songs is", novemberArtists());
+
+//Artist like to repeat
+var bestArtist = function () {
+  var byArtist = _.countBy(abbeyRoadRecords, function(value){
+    if(_.has(value, 'artist')) return value.artist;
+  });
+
+  var artist;
+  _.reduce(byArtist, function(accumulator, value, key, collection){
+    if(key !== "undefined" && value > accumulator){
+      artist = key;
+      return value;
+    }else{
+      return 0;
+    }
+  }, 0);
+
+  return artist;
+};
+
+console.log("The artis with more recordings is", bestArtist());
+
+//The beatles and Abby Road
+var lastBeatlesSong = function () {
+  var beatlesSongs = _.filter(abbeyRoadRecords, function(v){
+    if(_.has(v, 'artist')) return v.artist == 'The Beatles';
+  });
+
+  return _.last(_.sortBy(beatlesSongs, ['year'])).song;
+};
+//Remember to execute the function to actually assing the value to the var.
+console.log("The Beatles last song was", lastBeatlesSong() );
+
+//Sixties crazyness
+//
+
+var sixtiesSong = function () {
+  var sixties = _.filter(abbeyRoadRecords, function(v){
+    if(_.has(v, 'year')) return (v.year >1959 && v.year < 1970);
+  });
+
+  return _.last(_.sortBy(sixties, ['year', 'month'])).song;
+};
+//Remember to execute the function to actually assing the value to the var.
+console.log("The sixties last song was", sixtiesSong() );

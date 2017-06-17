@@ -1,3 +1,5 @@
+console.log("Iteration 2: Harry potter");
+
  var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
                   "Ron Weasley", "1 March", "Remus Lupin", "10 March",
                   "Fred & George Weasley", "1 April", "Pomona Sprout", "15 May",
@@ -20,5 +22,3 @@ var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
 var allBday = multArr( _.concat(birthdays, moreBirthdays));
 
 console.table(allBday);
-
-console.log("END OF HP ITERATION");

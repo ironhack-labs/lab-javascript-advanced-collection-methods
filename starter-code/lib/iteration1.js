@@ -1,3 +1,5 @@
+console.log("ITERATION 1: Employres survey");
+
 var opinions = [ "This is the best job ever",
                  "Satisfied",
                  "At least I get paid",

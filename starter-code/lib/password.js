@@ -1,3 +1,4 @@
+console.log("Iteration 3: Passwords");
 
 // Different characters
 var goodPsswd = "1234567890";
