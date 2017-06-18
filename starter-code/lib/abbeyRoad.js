@@ -225,7 +225,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -911,3 +911,31 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+var novemberArtists = function (records) {
+  return records.filter(function(record) {
+    return record.year < 1940 && record.month === 11;
+  });
+};
+console.log(novemberArtists(abbeyRoadRecords));
+
+var bestArtist = function (records) {
+  var artists = _.groupBy(records, 'artist');
+  var popularArtist = _.maxBy(_.keys(artists), function (index) {
+    return artists[index];
+  });
+  return popularArtist;
+};
+console.log(bestArtist(abbeyRoadRecords));
+
+var lastBeatlesSong = function (records) {
+  var artists = _.groupBy(records, 'artist');
+  return artists["The Beatles"][artists["The Beatles"].length - 1].year;
+};
+console.log(lastBeatlesSong(abbeyRoadRecords));
+
+var lastSixtiesSong = function (records) {
+  var songsByYear = _.groupBy(records, 'year');
+  return songsByYear["1969"][songsByYear["1969"].length - 1].song;
+};
+console.log(lastSixtiesSong(abbeyRoadRecords));
