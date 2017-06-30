@@ -32,5 +32,6 @@ var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
 var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
 		     "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
 
-var array2d = getArray2d(birthdays);
 var arraypp = addObjects(moreBirthdays, birthdays);
+var array2d = getArray2d(birthdays);
+
