@@ -1,10 +1,8 @@
 ![](https://i.imgur.com/1QgrNNw.png)
 
-# JS | Lodash Exercises
+# JS | Advanced Collection Methods Exercises
 
-These exercises will help you to practice and discover some of the most useful functions Lodash provides.
-
-To solve them, please refer to the formal [Lodash documentation](https://lodash.com/) and take a look at the files in the starter code in this repository.
+These exercises will help you to practice really usefull Javascript objects methods.
 
 ## Requirements
 
@@ -63,10 +61,7 @@ var employeeSatisfaction = function () {
   return array;
 };
 ```
-
 5) Show your result in the console.
-
-:bulb: **Hint:** Look at the Lodash Array methods. Use `_.times` if you need to repeat an action.
 
 ## Iteration 2 - Harry Potter's Birthdays
 
@@ -79,9 +74,6 @@ Take a look at the `harryPotter.js` array. It is so messy, they can't even remem
 Let's organize Harry Potter Character's Birthdays. Unfortunately, [*Scourgify*](http://harrypotter.wikia.com/wiki/Scouring_Charm) won't help us now, but Lodash could...
 
 1) Create a function that receives an array and returns an array of two dimensions. Each internal array should have the name of one character and his date of birthday.
-
-
-:bulb: **Hint:** Look at the Lodash Array methods.
 
 2) Now that we have our two-dimensions array, we notice that some of the birthdays are missing. But we found another array with birthdays from the book.
 
@@ -99,8 +91,6 @@ Yeah, yeah, to set a password is ALWAYS a big trauma. We will ask for a password
 ![eCard about Passwords](https://i.imgur.com/CJHtpLw.png)
 
 **Different characters:** create a function that receives a password and returns an error if every char in the password is not unique.
-
-:bulb: **Hint:** Look at the Lodash Array methods. Use `_.times` if you need to repeat an action.
 
 ```javascript=
 var goodPsswd = "1234567890";
@@ -142,7 +132,7 @@ Abbey Road Studios opened in 1931. Through all these years, the amount of data t
 
 ![Abbey Road front door](https://i.imgur.com/1kRBdy4.jpg)
 
-Lodash is a great tool for retrieving information. But first, take a look at the data object located in the `abbeyRoad.js` file in your `lib` folder.
+Take a look at the data object located in the `abbeyRoad.js` file in your `lib` folder.
 
 **November looks like a good month:** In the 30's, they use to gather information about the months when the recordings where made. Get the artist who recorded the most on November in Abbey Road.
 
@@ -182,7 +172,7 @@ var sixtiesSong = function () {
 
 ## Summary
 
-Lodash could help you, specially when starting to code, to think in a more functional manner. It is also a good tool to avoid repetition and speed up coding time. Through these exercises you got familiar with the Lodash documentation and some of the over a 100 functions it provides.
+Collection methods are really usefull
 
 ## Extra Resources
 
