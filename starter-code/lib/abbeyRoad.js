@@ -1,3 +1,7 @@
+//var _= require("lodash");
+
+//FIRST PART
+
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -24,13 +28,13 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1936},
                       {song: "I Can't Give You Anything but Love",
                       artist: "Adelaide Hall and Fats Waller",
-                      month: 08,
+                      month: 8,
                       year: 1938},
                       {song: "Symphony No. 5",
                       artist: "Vaughan Williams",
                       year: 1943},
                       {artist: "Glenn Miller and Dinah Shore",
-                      month: 09,
+                      month: 9,
                       year: 1944},
                       {song: "Quintet for Piano and Winds",
                       artist: "Dennis Brain Wind Ensemble with Colin Horsley",
@@ -225,7 +229,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -911,3 +915,45 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+//FIRST PART
+
+var novemberRecorded = _.filter(abbeyRoadRecords, { "month" : 11 });
+
+var novemberArtist = _.mapValues(novemberRecorded, 'artist');
+
+var novemberArtistArray = _.map(novemberArtist, function(value, index) {
+  return [value];
+});
+
+var counter = _.countBy(novemberArtistArray);
+var novemberRepeatedArtist = _(novemberArtistArray).uniq().sortBy(item => counter[item]).reverse().value();
+console.log(novemberRepeatedArtist[0].join());
+
+//SECOND PART
+
+
+
+
+//THIRD PART
+
+var beatlesRecords = _.filter(abbeyRoadRecords, {"artist" : "The Beatles"});
+
+var beatlesSortYear = _.sortBy(beatlesRecords, ["year"]);
+
+var lastAlbum = _.findLast(beatlesSortYear);
+
+console.log(lastAlbum.year);
+
+
+//_.findLast([1, 2, 3, 4], function(n) {
+//  return n % 2 == 1;
+//});
+
+//FOURTH PART
+
+var lastYearSixties = _.filter(abbeyRoadRecords, {"year" : 1969});
+var monthSorted = _.sortBy(lastYearSixties, ["month"]);
+var lastSong = _.findLast(monthSorted);
+
+console.log(lastSong.song);
