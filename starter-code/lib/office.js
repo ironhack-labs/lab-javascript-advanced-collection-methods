@@ -32,5 +32,10 @@ var employeeSatisfaction = function (a) {
   return array;
 };
 
-console.log(chooseRandomOpinion(opinions));
-console.log(employeeSatisfaction(opinions));
+var satisfaction = employeeSatisfaction(opinions);
+//console.log(chooseRandomOpinion(opinions));
+console.log("\nOpinions of the department 1:\n", satisfaction[0]);
+console.log("\nOpinions of the department 2:\n", satisfaction[1]);
+console.log("\nOpinions of the department 3:\n", satisfaction[2]);
+console.log("\nOpinions of the department 4:\n", satisfaction[3]);
+console.log("\nOpinions of the department 5:\n", satisfaction[4]);

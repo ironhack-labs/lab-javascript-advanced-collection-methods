@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -911,3 +913,25 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+
+var novemberArtists = function (a) {
+  //your code
+    var months = _.filter(a, { 'month': 11 });
+    var artist = _.map(months, 'artist');
+    var repeat = _.countBy(artist);
+    console.log(repeat);
+    var b=Object.values(repeat);
+    console.log(b);
+
+    b = b.sort().pop();
+    _.forEach(repeat, function(value,key) {
+      if (b == value){
+        console.log("The artist who recorded the most times: ",key);
+      }
+    });
+};
+//Remember to execute the function to actually assing the value to the var.
+
+var artistRecordNovember = novemberArtists(abbeyRoadRecords);
