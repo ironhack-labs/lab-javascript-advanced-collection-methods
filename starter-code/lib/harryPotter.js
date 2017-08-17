@@ -8,3 +8,22 @@
                    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
                    "6 December", "Charlie Weasley", "12 December"];
+
+var organizeBirthdays = _.reduce(birthdays,function(result, value, index) {
+    if (index % 2 === 0)
+      result.push(birthdays.slice(index, index + 2));
+    return result;
+  }, []);
+
+var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
+                     "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
+
+var addBirthdays = _.reduce(moreBirthdays,function(result, value, index) {
+    if (index % 2 === 0)
+      result.push(moreBirthdays.slice(index, index + 2));
+    return result;
+  }, []);
+
+var updatedBirthdays = _.union(organizeBirthdays, addBirthdays);
+
+console.log(updatedBirthdays);
