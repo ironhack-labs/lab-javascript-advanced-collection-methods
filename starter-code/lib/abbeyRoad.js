@@ -225,7 +225,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -911,3 +911,44 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+
+var novemberArtists = function (object) {
+  var november = _.filter(object, ['month', 11]);
+  console.log('The artists that recorded in November: ' + _.uniq(_.map(november, 'artist')));
+};
+
+novemberArtists(abbeyRoadRecords);
+
+var bestArtist = function (object) {
+  var artistsFrequency = _.countBy(object, 'artist');
+  var count = 0;
+  var artist;
+  for (var prop in artistsFrequency) {
+    if(count < artistsFrequency[prop]) {
+      count = artistsFrequency[prop];
+      artist = prop;
+    }
+  }
+  console.log('The artist that recorded the most times: ' + artist);
+};
+
+bestArtist(abbeyRoadRecords);
+
+var lastBeatlesSong = function (object) {
+  var beatlesSongs = _.filter(object, ['artist', 'The Beatles']);
+  var lastSong = _.maxBy(beatlesSongs, 'year');
+  console.log('Last Beatles song recorded in: ' + lastSong.year);
+};
+
+lastBeatlesSong(abbeyRoadRecords);
+
+var sixtiesSong = function (object) {
+  var sixtiesSongs = _.filter(object, function(item, index){
+    return item.year > 1959 && item.year < 1970;
+  });
+  console.log('The last song recorded in the sixties is: ' + sixtiesSongs[sixtiesSongs.length-1].song);
+};
+
+sixtiesSong(abbeyRoadRecords);
