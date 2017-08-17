@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,

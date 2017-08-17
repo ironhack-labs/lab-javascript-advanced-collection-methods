@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 //HARRY POTTER
 
 //IT1
@@ -28,4 +26,3 @@ var mBirthdays = divideArray(moreBirthdays);
 var allBirthdays = _.concat(almostAllBirthdays, mBirthdays);
 console.log("Final list:\n");
 console.log(allBirthdays);
-           

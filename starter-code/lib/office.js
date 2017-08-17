@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 //OFFICE
 //1
 var opinions = [ "This is the best job ever",
