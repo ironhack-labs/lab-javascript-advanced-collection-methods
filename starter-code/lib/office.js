@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var opinions = [ "This is the best job ever",
                  "Satisfied",
                  "At least I get paid",
@@ -6,16 +7,20 @@ var opinions = [ "This is the best job ever",
 
 var survey = []
 
-function randomChoice(choices) {
-  return _.sample(choices)
+function randomChoice() {
+  console.log("entro a randomChoice")
+  return _.sample(opinions)
 }
 
-function addOpinions(randomChoicer, availableOptions, elections) {
-  for(var i=0; i<10; i++){
-    var a = randomChoicer(availableOptions);
-    elections.push(a);
-  }
-  console.log(elections);
+function departmentOpinion() {
+  console.log("entro a addOpinions")
+  return _.times(10,randomChoice)
 }
 
-addOpinions(randomChoice, opinions, survey)
+function fiveDepartmentsOpinions(){
+  return _.times(5, departmentOpinion)
+}
+
+console.log(fiveDepartmentsOpinions());
+
+addOpinions()
