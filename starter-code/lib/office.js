@@ -1,4 +1,3 @@
-var _ = require('lodash');
 
 //Iteracion 1.1
 var opinions = [ "This is the best job ever",
@@ -9,36 +8,24 @@ var opinions = [ "This is the best job ever",
 
 
 //Iteracion 1.2
-function elegirOpinion(array){
-    return _.sample(array);
+function elegirOpinion(){
+    return _.sample(opinions);
 }
-
-elegirOpinion(opinions);
 
 //Iteracion 1.3
 
-var departamento1 = {
-  opiniones:[]
-}
-var departamento2 = {
-  opiniones:[]
-}
-var departamento3 = {
-  opiniones:[]
-}
-var departamento4 = {
-  opiniones:[]
-}
-var departamento5 = {
-  opiniones:[]
-}
-var departamentos = [departamento1,departamento2,departamento3,departamento4,departamento5];
-
-
-function addOpinion(array, departamento){
-  departamento.opiniones = _.times(10,(elegirOpinion(array)));
+function addOpinion(){
+  return _.times(10,elegirOpinion);
 }
 
-addOpinion(opinions,departamento1)
-console.log(departamento1)
-elegirOpinion(opinions)
+var departamento = addOpinion();
+
+//Iteración 1.4
+
+
+function employeeSatisfaction(){
+  return _.times(5,addOpinion);
+}
+
+var survey = employeeSatisfaction();
+console.log(survey);
