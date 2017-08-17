@@ -911,3 +911,22 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+  
+
+
+    var recordNov = _.filter(abbeyRoadRecords,{"month":11});
+
+
+    var artistNov = _.map(recordNov,"artist");
+
+    var nov = _.countBy(artistNov)
+    console.log(nov)
+
+
+    var nombre= _.sortBy(nov)
+    console.log(nombre);
+
+    var final = (nombre[nombre.length-1]);
+    console.log(final)
