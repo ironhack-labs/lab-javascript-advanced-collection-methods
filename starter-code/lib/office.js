@@ -1,4 +1,4 @@
-var _ = require('lodash');
+
 
 var opinions = [
       "This is the best job ever",
@@ -12,9 +12,12 @@ function randomly (){
   return _.sample(opinions);
 }
 
-
 function times(){
-  return _.times(10, function(){return _.sample(opinions)})
+  return _.times(10, randomly);
 }
 
-times()
+function departaments (){
+  return _.times(5,times);
+}
+
+console.log(departaments(opinions));
