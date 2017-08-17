@@ -911,3 +911,44 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+                      var novemberArtists = function () {
+                        var artist = _.countBy(_.filter(abbeyRoadRecords, { 'month': 11 }), 'artist');
+
+                        var valuesArray = _.values(artist);
+                        var maxValue = _.maxBy(valuesArray);
+                        var keysArray = _.keys(artist);
+                        var indexMaxValue = _.indexOf(valuesArray, maxValue);
+
+
+                        return keysArray[indexMaxValue];
+                      };
+
+                      console.log(novemberArtists());
+
+                      var bestArtist = function () {
+                        var artist = _.countBy(abbeyRoadRecords, 'artist');
+                        var valuesArray = _.values(artist);
+                        var maxValue = _.maxBy(valuesArray);
+                        var keysArray = _.keys(artist);
+                        var indexMaxValue = _.indexOf(valuesArray, maxValue);
+
+                        return (keysArray[indexMaxValue]);
+                      };
+
+                      console.log(bestArtist());
+
+                      var lastBeatlesSong = function () {
+                        var beatles = _.filter(abbeyRoadRecords, { 'artist': "The Beatles" });
+                        return _.maxBy(beatles, 'year');
+                      };
+
+                      console.log(lastBeatlesSong());
+
+                      var sixtiesSong = function () {
+                          var result = _.filter(abbeyRoadRecords, function (artista){
+                          return _.range(artista.year, 1960, 1970);
+                        });
+                      };
+
+                      console.log(sixtiesSong());
