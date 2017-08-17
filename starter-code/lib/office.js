@@ -14,8 +14,7 @@ var departamentOpinions = function() {
 };
 
 var employeeSatisfaction = function() {
-  var array = _.times(5, departamentOpinions);
-  return array;
+  return _.times(5, departamentOpinions);
 };
 
 console.log(employeeSatisfaction());
