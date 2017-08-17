@@ -6,17 +6,23 @@ var opinions = ["This is the best job ever",
 ];
 
 //Create a function that randomly picks up one of these items in the opinions array.
-function opRandom (a) {
-  return _.sample(a);
+function opRandom() {
+  console.log("entro a opRandom");
+  return _.sample(opinions);
 }
 //console.log(opRandom(opinions));
 
-function opDepartment (b) {
-  var arrDepartment = [];
-  for (var i = 0; i < 10; i++) {
-    var x = opRandom(b);
-    arrDepartment.push(x);
-  }
-  return arrDepartment;
+function opDepartment(b) {
+  console.log("entro a opDepartment");
+  return _.times(10, opRandom);
 }
-console.log(opDepartment(opinions));
+
+//var result = opDepartment();
+//console.log(result)
+
+function employeeSatisfaction() {
+  return _.times(5, opDepartment);
+}
+
+var result = employeeSatisfaction();
+console.log(result);
