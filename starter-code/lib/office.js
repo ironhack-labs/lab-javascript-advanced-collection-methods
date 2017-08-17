@@ -1,6 +1,6 @@
 var _ = require('lodash');
-//OFFICE
 
+//OFFICE
 //1
 var opinions = [ "This is the best job ever",
                  "Satisfied",
@@ -9,27 +9,28 @@ var opinions = [ "This is the best job ever",
                  "I don't want to answer"];
 
 //2
-function chooseRandomOpinion(a){
-  return _.sample(a);
+function chooseRandomOpinion (){
+  return _.sample(opinions);
 }
 
 //3
-function tenOpinions(a){
-  var randOpinions=[];
-   randOpinions = _.times(10, chooseRandomOpinion(a));
-   return randOpinions;
+var tenOpinions = function(a) {
+  var array = [];
+  _.times(10, function() {
+    array.push(chooseRandomOpinion(a));
+  });
+  return array;
+ };
 
-}
 //4
-
-var employeeSatisfaction = function () {
+var employeeSatisfaction = function (a) {
   // Steps 2, 3 and 4 here
-  var array=[];
-  for(var i = 0; i<5; i++){
-    array[i] = tenOpinions();
-  }
+  var array = [];
+  _.times(5, function() {
+    array.push(tenOpinions(a));
+  });
   return array;
 };
 
 console.log(chooseRandomOpinion(opinions));
-console.log(tenOpinions(opinions));
+console.log(employeeSatisfaction(opinions));
