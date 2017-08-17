@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -911,3 +913,60 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+
+
+                      var novemberArtists = function () {
+                      var array_11=_.filter(abbeyRoadRecords, {"month": 11});
+                       var array2 = _.filter(array_11, function(o){return o.year < 1940});
+
+                      //console.log(Object.keys(array2[0]));
+
+
+                      var prueba = _.map(array2,function(value){
+                      	return value.artist;
+                      })
+
+
+
+
+                      var valorsNom = _.countBy(prueba);
+                      console.log(valorsNom)
+
+                      contadas = Object.values(valorsNom);
+                      //console.log(contadas)
+                      var masAlta = contadas.pop()
+                      console.log(masAlta)
+                      var repetido = ""
+
+                      _.forEach(valorsNom, function(value, key) {
+  												if(value === masAlta){
+  													repetido = key;
+  												}
+                      })
+
+                      console.log(repetido);
+
+                     /*var arrNombres =_.toPairs(valorsNom);
+                     console.log(arrNombres)
+                     var cantantes = {};
+                     _.forEach(arrNombres,function(values){
+                     		_.set(cantantes, "nombre", values[0]);
+                     		_.set(cantantes, "times", values[1]);
+                     })
+                     console.log(cantantes)
+                      /*var propiedades = []
+
+                     _.forEach(array2,function(value){
+
+                      	propiedades.push(Object.values(value))
+
+                      })
+
+                      var valoresFlat = _.flatten(propiedades)
+
+                      console.log(_.countBy(valoresFlat))*/
+                      }
+
+                      novemberArtists();

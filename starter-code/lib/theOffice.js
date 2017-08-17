@@ -1,3 +1,4 @@
+var _ = require('lodash');
 
 var opinions = [ "This is the best job ever",
                  "Satisfied",
@@ -11,18 +12,16 @@ function pickRandom(){
 }
 function pushInside(){
   survey.push(pickRandom());
+  return _.times(10,pickRandom);
 }
 
 var employeeSatisfaction = function () {
-  var final = [];
-  for(var i = 0; i<5; i++){
-    for(var j =0; j<10; j++){
-      pushInside();
-    }
 
-  }
+  var final = [];
+
+  var hola = _.times(5,(pushInside));
   final = _.chunk(survey,10);
-  return final;
+  return hola;
 };
 
 //console.log(employeeSatisfaction());
