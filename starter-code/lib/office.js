@@ -1,5 +1,3 @@
-var _ = require('lodash');
-
 var opinions = ["This is the best job ever",
     "Satisfied",
     "At least I get paid",
