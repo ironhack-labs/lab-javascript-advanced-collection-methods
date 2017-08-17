@@ -911,3 +911,55 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+var novemberArtists = function (array) {
+  var discos = array.filter(function(object){
+    return object.month == 11;
+  })
+  var artistas = _.countBy(discos, function(obj){
+    return obj.artist;
+  })
+  var newArtists = _.invert(artistas)
+  var newArtistsKeys = _.keys(newArtists)
+  var sortedKeys = newArtistsKeys.sort(function(a,b) {
+    return b - a;
+  });
+  return newArtists[sortedKeys[0]];
+
+};
+
+console.log(novemberArtists(abbeyRoadRecords))
+
+// seperate all objects with month 11, then inspect to see which artist comes up the most
+
+var bestArtist = function (array) {
+  var artistas = _.countBy(array, function(obj){
+    return obj.artist;
+})
+  var newArtists = _.invert(artistas)
+  var newArtistsKeys = _.keys(newArtists)
+  var sortedKeys = newArtistsKeys.sort(function(a,b) {
+    return b - a;
+  });
+  return newArtists[sortedKeys[0]];
+}
+
+console.log(bestArtist(abbeyRoadRecords))
+
+var lastBeatlesSong = function (array) {
+  var discos = array.filter(function(object){
+    return object.artist == "The Beatles";
+});
+  return _.last(discos).year;
+}
+
+console.log(lastBeatlesSong(abbeyRoadRecords))
+
+var sixtiesSong = function (array) {
+   var discos = array.filter(function(object){
+    return object.year < 1970;
+});
+   return _.last(discos).song;
+}
+
+console.log(sixtiesSong(abbeyRoadRecords))
