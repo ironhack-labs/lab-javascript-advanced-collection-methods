@@ -1508,7 +1508,3 @@ var abbeyRoadRecords = [{
     year: 2016
   }
 ]
-
-var novemberArtists = function (a) {
-
-}
