@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -225,7 +227,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1966},
                       {song: "Thunderbirds Are Go",
                       artist: "The Shadows with Cliff Richard",
-                      year: 1966},,
+                      year: 1966},
                       {song: "For Certain Because",
                       artist: "The Hollies",
                       year: 1967},
@@ -911,3 +913,44 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+var novemberArtists = function () {
+  return _.filter(abbeyRoadRecords, {'month': 11});
+};
+
+novemberArtists();
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+var bestArtist = function () {
+  var occurrences = _.countBy(abbeyRoadRecords, 'artist');
+  var chainedResults = _.chain(occurrences);
+  var reverseOrdered = chainedResults.toPairs().sortBy(1).reverse();
+  var resultingGroup = reverseOrdered.map(0).value();
+
+  console.log(resultingGroup[0]);
+};
+
+bestArtist();
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+var lastBeatlesSong = function () {
+  var songIndexes = _.filter(abbeyRoadRecords, { 'artist': 'The Beatles'});
+  var lastToFirst = _.sortBy(songIndexes, ['year']).reverse();
+  return lastToFirst[0].year;
+};
+
+lastBeatlesSong();
+
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+var sixtiesSong = function () {
+  var last60s = _.findLast(abbeyRoadRecords, { 'year': 1969 });
+
+  console.log(last60s.song);
+};
+
+sixtiesSong()
