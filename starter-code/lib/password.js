@@ -1,36 +1,58 @@
+var _ = require('lodash');
+
+//noRepeatChar Implementation
 var goodPsswd = "1234567890";
 var badPsswd = "1123456";
-var ourPass = "923562935698375";
 
-var noRepeatChar = function(p) {
+function noRepeatChar(p) {
   var evalPsw = _.uniq(p).length !== p.length;
   if (evalPsw) {
-    console.log("Ese peazo de password es incorrecto. No repitas caractererrrrrs.");
+    return "quietooor!!.. eese peaso de parrworrr de la pradera ase muucha pupita";
   } else {
-    console.log("Pecador, ese es correcto, no hay caracteres repetidos.");
+    return true;
   }
-};
+}
 
-noRepeatChar(goodPsswd);
-noRepeatChar(badPsswd);
-noRepeatChar(ourPass);
-/*
+//Results
+var good = noRepeatChar(goodPsswd);
+var bad = noRepeatChar(badPsswd);
+console.log(" noRepeatChar Results: ");
+console.log("goodPsswd: " + good);
+console.log("badPsswd: " + bad + "\n");
+
+//onlyNumbers Implementation
 goodPsswd = "1234567890";
 badPsswd = "1a234567890";
 
-var onlyNumbers = function(p) {
+function onlyNumbers(p) {
+  var num = _.toNumber(p);
+  if (_.isNaN(num)) {
+    return "ERROR";
+  } else return true;
+}
 
-  _.forEach(p, function(value) {
-    var x = value_.isNaN();
-  });
-  if (x) {
-    console.log("Ese peazo de password es incorrecto: ¡¡Solo admite valores numericorsss.!!!");
+//Results
+good = onlyNumbers(goodPsswd);
+bad = onlyNumbers(badPsswd);
+console.log(" onlyNumbers Results: ");
+console.log("goodPsswd: " + good);
+console.log("badPsswd: " + bad + "\n");
+
+//trimPassword Implementation
+goodPsswd = "1234567890";
+badPsswd = "12345678901234567890";
+
+function trimPassword(p) {
+  if (_.size(p) > 10) {
+    return _.slice(p, 9, p.length);
   } else {
-    console.log("Pecador, ese es correcto, todos son números.");
+    return p;
   }
-};
+}
 
-
-onlyNumbers(goodPsswd);
-onlyNumbers(badPsswd);
-*/
+//Results
+good = trimPassword(goodPsswd);
+bad = trimPassword(badPsswd);
+console.log(" trimPassword Results: ");
+console.log("goodPsswd: " + good);
+console.log("badPsswd: " + bad);
