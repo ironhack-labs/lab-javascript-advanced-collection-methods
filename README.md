@@ -71,7 +71,7 @@ Navigating through Internet, we found a very messy array with the birthdays of H
 
 Take a look at the `harryPotter.js` array. It is so messy, they can't even remember which date belongs to whom. But we know each date follows each character's name.
 
-Let's organize Harry Potter Character's Birthdays. Unfortunately, [*Scourgify*](http://harrypotter.wikia.com/wiki/Scouring_Charm) won't help us now, but Lodash could...
+Let's organize Harry Potter Character's Birthdays. Unfortunately, [*Scourgify*](http://harrypotter.wikia.com/wiki/Scouring_Charm) won't help us now, but Javascript could...
 
 1) Create a function that receives an array and returns an array of two dimensions. Each internal array should have the name of one character and his date of birthday.
 
