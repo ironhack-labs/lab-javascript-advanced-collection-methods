@@ -176,5 +176,5 @@ Collection methods are really usefull
 
 ## Extra Resources
 
-- [Devdocs.io](http://devdocs.io/lodash~4/)
+
 - [Inside Abbey Road with Google](https://insideabbeyroad.withgoogle.com/en) - Only if you have a lot of spare time... you can find a virtual tour created by Google to the guts of the Abbey Road Studios 🙂
