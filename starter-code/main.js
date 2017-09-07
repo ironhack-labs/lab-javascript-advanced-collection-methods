@@ -51,17 +51,50 @@ console.log(completeBday(birthdays,moreBirthdays));;
 // Iteration 3
 var goodPsswd = "1234567890";
 var badPsswd = "1123456";
+
 var noRepeatChar = function (password) {
-  for (i=0; i<password.length;i++) {
-  if (_.findIndex(i) !== _.findLastIndex(i)) {
-    return "Read the intructions again dummy!"
+  for (i = 0; i < password.length; i++) {
+    var firstIndex = _.findIndex(password.split(''), function (o) { return o === password[i]})
+    var lastIndex = _.findLastIndex(password.split(''), function (o) { return o === password[i]})
+
+    if (firstIndex === lastIndex) {
+      return "sucess"
+    } else {
+      return "dont repeat dummy"
     }
   }
-  return "Success"
 }
+
 console.log(noRepeatChar(goodPsswd));
 console.log(noRepeatChar(badPsswd));
 
-console.log(_.findIndex(goodPsswd.split(''), function(o) {
-  return o === "2"
-}))
+var onlyNumbers = function (password) {
+  return _.isInteger(Number(password))
+}
+
+var goodPsswd = "1234567890";
+var badPsswd = "1a234567890";
+
+console.log(onlyNumbers(goodPsswd))
+console.log(onlyNumbers(badPsswd))
+
+
+var goodPsswd = "12345678";
+var badPsswd = "12345678901234567890";
+
+var trimPassword = function (password) {
+ var trimmedArray = _.slice(password.split(''), 0, 10)
+ return _.join(trimmedArray, '')
+}
+
+console.log(trimPassword(goodPsswd))
+console.log(trimPassword(badPsswd))
+
+
+//Iteration 4
+var novemberArtists = function (records) {
+  var novrecords = _.filter(records, { 'month': 11})
+  
+};
+
+novemberArtists(abbeyRoadRecords)
