@@ -93,8 +93,53 @@ console.log(trimPassword(badPsswd))
 
 //Iteration 4
 var novemberArtists = function (records) {
-  var novrecords = _.filter(records, { 'month': 11})
-  
+  var novemberRecords = _.filter(records, { 'month': 11})
+  var countedRecords = _.countBy(novemberRecords, (record) => { return record.artist })
+  var max_artist = novemberRecords[0].artist // initializing max_artist
+
+  _.keys(countedRecords).forEach( (artist) => {
+    if (countedRecords[artist] > countedRecords[max_artist]) {
+      max_artist = artist
+    }
+  })
+
+  console.log(max_artist + " recorded the most records on a november (" + countedRecords[max_artist] + " records)")
+  return max_artist
 };
 
 novemberArtists(abbeyRoadRecords)
+
+
+// Basically the same as the previous function, just without the filtering by month
+var bestArtist = function (records) {
+  var countedRecords = _.countBy(records, (record) => { return record.artist })
+  var max_artist = records[0].artist // initializing max_artist
+
+  _.keys(countedRecords).forEach( (artist) => {
+    if (countedRecords[artist] > countedRecords[max_artist]) {
+      max_artist = artist
+    }
+  })
+
+  console.log(max_artist + " recorded the most records in Abbey (" + countedRecords[max_artist] + " records)")
+  return max_artist
+};
+
+bestArtist(abbeyRoadRecords)
+
+
+
+var lastBeatlesSong = function (records) {
+  var beatlesRecord = _.filter(records, { 'artist': 'The Beatles'})
+  var final_recording_year = 1900
+
+  beatlesRecord.forEach( (record) => {
+    if (record.year > final_recording_year) {
+      final_recording_year = record.year
+    }
+  })
+  console.log("The Beatles recorded their final song in Abbey Road " + final_recording_year)
+  return final_recording_year
+};
+
+lastBeatlesSong(abbeyRoadRecords)
