@@ -28,18 +28,17 @@ var onlyNumbers = function (password) {
   else{
     return false;
   }
-}
+};
 
-onlyNumbers(badPsswd)
+onlyNumbers(badPsswd);
 
 
-/*
+
 var goodPsswd = "1234567890";
 var badPsswd = "12345678901234567890";
-var trimPassword = function (password {
- var firsTen = _.truncate(password,{
-   'length':10});
- return firsTen;
-}
+
+var trimPassword = function (password) {
+ password = password.substr(0,9);
+ return password;
+};
 trimPassword(badPsswd);
-*/
