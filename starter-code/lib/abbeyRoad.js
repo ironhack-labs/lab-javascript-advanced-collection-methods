@@ -1,85 +1,110 @@
-var abbeyRoadRecords = [{song: "Land of Hope and Glory",
+var abbeyRoadRecords = [
+                    {song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
                       year: 1931},
+
                       {song: "Elgar violin concerto",
                       artist: "Yehudi Menuhin",
                       month: 07,
                       year: 1932},
+
                       {song: "Piano Sonata, Funerailles",
                       artist: "Yehudi Menuhin",
                       month: 11,
                       year: 1932},
+
                       {song: "",
                       artist: "Richard Tauber",
                       month: 11,
                       year: 1933},
+
                       {song: "Suits No. 1 & 2 Johann Sebastian Bach's Cello Suites",
                       artist: "Pablo Casals",
                       month: 11,
                       year: 1933},
+
                       {song: "Suits No. 1 & 2 Johann Sebastian Bach's Cello Suites",
                       artist: "Pablo Casals",
                       month: 11,
                       year: 1936},
+
                       {song: "I Can't Give You Anything but Love",
                       artist: "Adelaide Hall and Fats Waller",
                       month: 08,
                       year: 1938},
+
                       {song: "Symphony No. 5",
                       artist: "Vaughan Williams",
                       year: 1943},
+
                       {artist: "Glenn Miller and Dinah Shore",
                       month: 09,
                       year: 1944},
+
                       {song: "Quintet for Piano and Winds",
                       artist: "Dennis Brain Wind Ensemble with Colin Horsley",
                       year: 1954},
+
                       {song: "Move It",
                       artist: "Cliff Richard and the Drifters",
                       year: 1958},
+
                       {song: "Cliff",
                       artist: "Cliff Richard and the Drifters",
                       year: 1959},
+
                       {song: "Cliff Sings",
                       artist: "Cliff Richard and the Drifters",
                       year: 1959},
+
                       {song: "Serious Charge",
                       artist: "Cliff Richard and the Drifters",
                       year: 1959},
+
                       {song: "Expresso Bongo",
                       artist: "Cliff Richard and The Shadows",
                       year: 1959},
+
                       {song: "Living Doll",
                       artist: "Cliff Richard and The Shadows",
                       year: 1959},
+
                       {song: "Travellin' Light",
                       artist: "Cliff Richard and The Shadows",
                       year: 1959},
+
                       {song: "100 Strings and Joni",
                       artist: "Joni James",
                       year: 1959},
+
                       {song: "My Thanks to You",
                       artist: "Connie Francis",
                       year: 1959},
+
                       {song: "Connie Francis Sings Italian Favorites",
                       artist: "Connie Francis",
                       year: 1959},
+
                       {song: "Christmas in My Heart",
                       artist: "Connie Francis",
                       year: 1959},
+
                       {song: "One for the Boys",
                       artist: "Joni James",
                       year: 1959},
                       {song: "Me and My Shadows",
                       artist: "Cliff Richard and The Shadows",
                       year: 1960},
+
                       {song: "Apache",
                       artist: "The Shadows",
                       year: 1960},
+
                       {song: "Please Don't Tease",
                       artist: "Cliff Richard and The Shadows",
                       year: 1960},
+
                       {song: "I Love You",
                       artist: "Cliff Richard and The Shadows",
                       year: 1960},
@@ -911,3 +936,21 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+var abbeyRoadRecordsNovember = _.filter(abbeyRoadRecords, { 'month': 11});
+
+const grouped = _.groupBy(abbeyRoadRecordsNovember, artist => artist.artist);
+    console.log(grouped);
+
+
+var maximo = 0;
+var autor = "";
+for (var i = 0; i < Object.keys(grouped).length; i++){
+  if(grouped[Object.keys(grouped)[i]].length > maximo){
+    maximo = grouped[Object.keys(grouped)[i]].length;
+    autor = Object.keys(grouped)[i];
+  }
+}
+
+console.log(autor + " " + maximo);
