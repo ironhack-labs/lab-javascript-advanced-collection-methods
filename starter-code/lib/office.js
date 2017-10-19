@@ -1,31 +1,21 @@
 var _ = require('lodash');
-var opinions = ["This is the best job ever",
-  "Satisfied",
-  "At least I get paid",
-  "I'm looking for another job",
-  "I don't want to answer"
-];
 
-function randomOpinion() {
-  return opinions[_.random([upper = opinions.length - 1])];
+var opinions = [ "This is the best job ever",
+                 "Satisfied",
+                 "At least I get paid",
+                 "I'm looking for another job",
+                 "I don't want to answer"];
+
+function samples () {
+  return _.sample(opinions);
 }
 
-var employeeSatisfaction = function() {
-  var newArray = [
-    [],
-    [],
-    [],
-    [],
-    []
-  ];
+function collection (){
+  return _.times(10, samples);
+}
 
-  for (var i = 0; i < 5; i++) {
-    for (var j = 0; j < 10; j++) {
-      newArray[i].push(randomOpinion());
-    }
-  }
-
-  return newArray;
+function employeeSatisfaction (){
+  return _.times(5, collection);
 }
 
 console.log(employeeSatisfaction());
