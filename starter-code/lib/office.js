@@ -24,11 +24,11 @@ var opinions = [
   }
 
   var employeeSatisfaction = function () {
-    array [];
+    var array = [];
     for (var i = 0; i < 5; i++)
     array.push (multiplyOpinions())
 
   return array;
 };
 
-console.log (employeeSatisfaction)
+console.log (employeeSatisfaction ())
