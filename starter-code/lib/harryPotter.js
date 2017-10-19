@@ -8,3 +8,27 @@
                    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
                    "6 December", "Charlie Weasley", "12 December"];
+
+var characterAndBirthday = birthdays.splice(0,2);
+
+console.log(characterAndBirthday);
+
+//
+
+var harryPotter = birthdays.reduce(function(acc,item,index) {
+
+},[]);
+
+///WE THOUGHT THIS COULD BE A GOOD WAY TO GET THERE
+
+var characterAndBirthday1 = birthdays.splice(0,2);
+
+console.log(characterAndBirthday1);
+
+console.log(birthdays);
+
+var characterAndBirthday2 = birthdays.splice(0,2);
+
+console.log(characterAndBirthday2);
+
+console.log(birthdays);
