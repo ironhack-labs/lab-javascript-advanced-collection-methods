@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -911,3 +913,34 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+// First Exercise
+var novemberArtists = function () {
+  var x = _.filter(abbeyRoadRecords, {'month': 11});
+  var y = _.countBy(x, 'artist');
+  var z = _.toPairs(y);
+  return  _.maxBy(z , 1)
+};
+
+// Second Exercise
+var bestArtist = function () {
+  var x = _.countBy(abbeyRoadRecords, 'artist');
+  var y = _.toPairs(x);
+  return  _.maxBy(y , 1)
+};
+
+// Third Exercise
+var lastBeatlesSong = function () {
+  var x = _.filter(abbeyRoadRecords, {'artist': "The Beatles"});
+  var y = _.orderBy(x, 'year');
+  return _.findLast(y);
+};
+
+// Fourth Exercise
+var sixtiesSong = function () {
+  var x = _.filter(abbeyRoadRecords, function(o) {
+    if (o.year < 1970 && o.year > 1959) {return o}
+  });
+  var y = _.orderBy(x, ['year', 'month']);
+ return _.findLast(y);
+};
