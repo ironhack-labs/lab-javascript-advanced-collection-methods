@@ -1,0 +1,8 @@
+function newArray(item){
+var bigArray= [];
+var littleArray = [];
+  for (var i = 0; i<item.length; i+2){
+    littleArray[i]= item[i];
+
+  }
+}
