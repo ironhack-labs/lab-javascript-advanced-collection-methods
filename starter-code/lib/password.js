@@ -11,8 +11,16 @@ var noRepeatChar = function (password) {
   {
     return true;
   }
-
 };
+
+var goodPsswd = "1234567890";
+var badPsswd = "1a234567890";
+var onlyNumbers = function (password) {
+  console.log(password.toUpperCase.includes(/[A-Z]/g));
+ //your code goes here
+};
+onlyNumbers(goodPsswd);
+onlyNumbers(badPsswd);
 
 console.log(noRepeatChar(goodPsswd));
 console.log(noRepeatChar(badPsswd));
