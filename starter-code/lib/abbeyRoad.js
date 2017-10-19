@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -911,3 +912,30 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+// ITERATION 1 EXERCISE 4
+var novemberArtists = function(){
+  return _.countBy(abbeyRoadRecords,function(b){
+    if (b.month!==undefined && b.month==11)
+      return b.artist;b.month;
+  });
+};
+// Remove all null values from list
+var myList = novemberArtists();
+// Remove undefined
+var count = 0;
+var indexBigger;
+myList = _.each(myList, function removeUndefined(value, key) {
+  if (key == "undefined") {
+    delete myList[key];
+  }
+});
+// Extract biggest
+_.each(myList, function removeUndefined(value, key) {
+console.log("count vale: "+count);
+  if (value > count){
+    count = value;
+    indexBigger = key;
+  }
+});
+console.log("Bigger artist is "+indexBigger);
