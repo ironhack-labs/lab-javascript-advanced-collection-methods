@@ -11,9 +11,7 @@ var arrayDepartments = [];
 function pushingOpinions(array) {
   var randomString;
   for (var i = 0; i < 10; i++) {
-
     randomString = _.random(0, opinions.length - 1);
-
     array = _.concat(array, opinions[randomString]);
   }
   return array;
