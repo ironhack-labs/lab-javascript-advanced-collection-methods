@@ -36,3 +36,14 @@ var onlyNumbers = function (password) {
 
 onlyNumbers(goodPsswd);
 onlyNumbers(badPsswd);
+
+
+//Ten digits only
+
+var goodPsswd = "1234567890";
+var badPsswd = "12345678901234567890";
+var trimPassword = function (password) {
+ return password.substr(0,10);
+};
+
+trimPassword(badPsswd);
