@@ -11,4 +11,12 @@
 
 var orderedBirthdays = _.chunk(birthdays, 2);
 
-console.log(orderedBirthdays);
+
+var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
+                     "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
+
+
+var orderMoreBirthdays = _.chunk(moreBirthdays, 2);
+
+var fullBirthdays = _.concat(orderMoreBirthdays, orderedBirthdays);
+console.log(fullBirthdays);
