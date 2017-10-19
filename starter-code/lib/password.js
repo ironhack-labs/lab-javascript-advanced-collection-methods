@@ -8,3 +8,31 @@ var noRepeatChar = function (password) {
   }
 };
  noRepeatChar(password);
+
+
+ //Only numbers
+
+ var goodPsswd = "1234567890";
+var badPsswd = "1a234567890";
+
+var onlyNumbers = function (password) {
+  var passwordArr = password.split("");
+  var numarr = [];
+  passwordArr.forEach(function(el) {
+  numarr.push(parseInt(el));
+  });
+
+  var validation = numarr.filter(function(i){
+    return isNaN(i);
+  }).length > 0;
+
+  if(validation) {
+  console.log("Invalid password");
+  } else {
+  console.log("Valid password");
+  }
+};
+
+
+onlyNumbers(goodPsswd);
+onlyNumbers(badPsswd);
