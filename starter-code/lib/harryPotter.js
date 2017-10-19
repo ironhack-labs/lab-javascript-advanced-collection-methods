@@ -8,3 +8,26 @@
                    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
                    "6 December", "Charlie Weasley", "12 December"];
+
+
+outputArray = [[]];
+
+
+function sepate(array){ 
+    outputArray = array.filter(function(element){
+
+
+    });
+}
+
+
+
+var birthdayPairs = birthdays.reduce( function (accumulator, item, index) {
+
+
+    var newPair = [birthdays[index], birthdays[index + 1]];
+
+    return accumulator;
+
+
+}, [])
