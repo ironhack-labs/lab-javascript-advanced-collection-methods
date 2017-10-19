@@ -9,16 +9,14 @@ var opinions = [ "This is the best job ever",
 function randomOpinion(opinions){
     return _.sample(opinions);
 }
-console.log(randomOpinion(opinions));
-//
+
 function departmentOpinions() {
   return  _.times(10, function (){
   return randomOpinion(opinions);
 });
 }
 
-console.log(departmentOpinions());
-//
+
 var employeeSatisfaction = function () {
  var array = [];
  var departmentOpinion = _.times (5, function(){
@@ -27,4 +25,5 @@ var employeeSatisfaction = function () {
  return departmentOpinion;
 
 };
+
 console.log(employeeSatisfaction());
