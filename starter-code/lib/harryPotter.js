@@ -11,12 +11,10 @@ var birthdays = ["Severus Snape", "9 January", "Arthur Weasley", "6 February",
   "6 December", "Charlie Weasley", "12 December"
 ];
 
-for (var i = 0; i < birthdays.length; i++) {
-  if (birthdays[1].charAt(0) >= 9) {
-    var cumple = birthdays.slice(i);
-  } else {
-    var nombre = birthdays.slice(i);
-  }
-}
 
-console.log(cumple);
+var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
+  "Dudley Dursley", "30 June", "Tom Riddle", "31 December"
+];
+
+_.concat(_.chunk(birthdays, 2), _.chunk(moreBirthdays, 2));
+
