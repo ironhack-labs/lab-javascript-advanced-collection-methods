@@ -930,12 +930,22 @@ myList = _.each(myList, function removeUndefined(value, key) {
     delete myList[key];
   }
 });
-// Extract biggest
 _.each(myList, function removeUndefined(value, key) {
-console.log("count vale: "+count);
   if (value > count){
     count = value;
     indexBigger = key;
   }
 });
 console.log("Bigger artist is "+indexBigger);
+
+// ITERATION 2 EXERCISE 4
+var bestArtist = function () {
+  var listBest = _.countBy(abbeyRoadRecords,'artist');
+  listBest = _.toPairs(listBest);
+  console.log(listBest);
+  listBest = _.max(listBest[1]);
+  console.log(listBest);
+  return listBest;
+};
+console.log(bestArtist());
+//Remember to execute the function to actually assing the value to the var.
