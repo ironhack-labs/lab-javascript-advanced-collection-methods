@@ -16,10 +16,19 @@ var randomOpinion = function(array){
  return result;
 }
 
+var departament = function(){
+  var opinionWorkers =[]
+  for(var i = 0; i < 10 ; i++){
+   var n = randomOpinion(opinions)
+   opinionWorkers.push(n)
+  }
+  return opinionWorkers;
+}
+
 var opinionWorkers =[]
 
-for(var i = 0; i < 10 ; i++){
- var n = randomOpinion(opinions)
- opinionWorkers.push(n)
+for(var i = 0; i < 5 ; i++){
+ var d = departament();
+ opinionWorkers.push(d)
 }
 console.log(opinionWorkers)
