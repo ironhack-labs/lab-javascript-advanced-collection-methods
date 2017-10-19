@@ -17,4 +17,3 @@ var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
 ];
 
 _.concat(_.chunk(birthdays, 2), _.chunk(moreBirthdays, 2));
-
