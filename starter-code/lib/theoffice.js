@@ -6,24 +6,28 @@ var opinions = [
     "I don't want to answer"
 ];
 // iteraccion 1
-//part 1
-function getRandom(e){  
-    var random = opinions[Math.floor(Math.random()*opinions.length)]
-      return random;
-      
-  }
-  getRandom(); 
 
-//part 2
-function getpush (i){
-    opinions.push(getRandom());
-    console.log (getpush);
-    return opinions;
-  }
-  getpush();
-  
-   var newOpinions = opinions.map(function getRandom(){
-    return opinions(getpush) + getpush();
-  })
-  
-  
+function getRandom(opinions1) {
+    return opinions1[Math.floor(Math.random() * opinions.length)]
+
+
+}
+
+
+//getRandom(); 
+//console.log(getRandom(opinions));
+
+
+
+var opinionsArray = []
+for (var i = 0; i < 10; i++) {
+    opinionsArray.push(getRandom(opinions));
+}
+
+// console.log(opinionsArray);
+
+var employeeSatisfaction = []
+for (var i = 0; i < 5; i++) {
+    employeeSatisfaction.push(opinionsArray);
+}
+console.log(employeeSatisfaction);
