@@ -1,7 +1,5 @@
-//Iteration1 Office
-
 var _ = require('lodash');
-
+//office1
 //Iteration1.1
 
 var opinions = ["This is the best job ever",
@@ -13,22 +11,21 @@ var opinions = ["This is the best job ever",
 
 //Iteration1.2
 
-var x = _.random([lower = 0], [upper = 4]);
 
+  function samples () {
+  return _.sample(opinions);
+  }
 
-
-console.log(opinions)
 
 //Iteration1.3
 
-var array = opinions;
-
-function addItem() {
-  array.push(array[x]);
+function collection (){
+  return _.times(10, samples);
 }
 
-for (i = 0; i < 5; i++) {
-  addItem(i)
+//Iteration1.4
+function employeeSatisfaction (){
+  return _.times(5, collection);
 }
 
-console.log(opinions)
+console.log(employeeSatisfaction());
