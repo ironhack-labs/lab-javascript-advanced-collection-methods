@@ -936,16 +936,39 @@ _.each(myList, function removeUndefined(value, key) {
     indexBigger = key;
   }
 });
-console.log("Bigger artist is "+indexBigger);
+console.log("Bigger artist in november was "+indexBigger);
 
 // ITERATION 2 EXERCISE 4
 var bestArtist = function () {
   var listBest = _.countBy(abbeyRoadRecords,'artist');
   listBest = _.toPairs(listBest);
-  console.log(listBest);
-  listBest = _.max(listBest[1]);
-  console.log(listBest);
-  return listBest;
+  var count = 0;
+  var indexBigger;
+  listBest.map(function(disc,index){
+    if (disc[1]>count){
+      count = disc[1];
+      indexBigger = index;
+    }
+  })
+  return "Artist with most discs is "+listBest[indexBigger][0]+" with "+listBest[indexBigger][1];
 };
-console.log(bestArtist());
+bestArtist();
 //Remember to execute the function to actually assing the value to the var.
+
+// ITERATION 3 EXERCISE 4
+
+/*
+The Beatles and Abbey Road: When did the four of Liverpool recorded their last song in Abbey Road Studios?
+*/
+var lastBeatlesSong = function () {
+  //your code
+};
+/*
+//Remember to execute the function to actually assing the value to the var.
+Sixties crazyness: The sixties were a crazy decade. Could you retrieve the last song it was recorded in Abbey Road Studios in the decade of 1960's?
+
+var sixtiesSong = function () {
+  //your code
+};
+//Remember to execute the function to actually assing the value to the var.
+*/
