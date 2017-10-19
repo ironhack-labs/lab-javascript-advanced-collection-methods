@@ -8,3 +8,7 @@
                    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
                    "6 December", "Charlie Weasley", "12 December"];
+
+var orderedBirthdays = _.chunk(birthdays, 2);
+
+console.log(orderedBirthdays);
