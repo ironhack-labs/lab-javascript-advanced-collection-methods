@@ -6,7 +6,7 @@ var badPsswd = "1123456";
 var noRepeatChar = function (password) {
   var arr = password.split("");
   var newArr = _.uniq(arr);
-  return arr == newArr;
+  return arr.length == newArr.length;
 };
 
 noRepeatChar(goodPsswd);
