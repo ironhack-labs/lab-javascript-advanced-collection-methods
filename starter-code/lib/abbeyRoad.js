@@ -911,3 +911,105 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+// November looks like a good month
+var years30 = abbeyRoadRecords.filter(function(record) {
+    return 1930 <= record.year && record.year < 1940;
+});
+
+var novemberYears30 = years30.filter(function(record) {
+    return record.month == 11;
+});
+
+var novemberArtists = function(records) {
+    return records.map(function(record) {
+        return record.artist;
+    });
+};
+
+var artists = novemberArtists(novemberYears30);
+
+function mostRepeatedArtist(array) {
+    counts = {};
+    for (var i = 0; i < array.length; i++) {
+        var name = array[i];
+        counts[name] = counts[name] ? ++counts[name] : 1;
+    }
+
+    var greater = 0;
+    var artist = "";
+    var artists = Object.keys(counts);
+    for (var j = 0; j < artists.length; j++) {
+        var key = artists[j];
+        if (counts[key] > greater) {
+            artist = key;
+            greater = counts[key];
+        }
+    }
+
+    return artist;
+}
+
+mostRepeatedArtist(artists);
+
+
+// Artists like to repeat
+var bestArtist = function(records) {
+    counts = {};
+    for (var i = 0; i < records.length; i++) {
+        var name = records[i].artist;
+        counts[name] = counts[name] ? ++counts[name] : 1;
+    }
+
+    var greater = 1;
+    var artist = "";
+    var artists = Object.keys(counts);
+    for (var j = 0; j < artists.length; j++) {
+        var key = artists[j];
+        if (counts[key] > greater) {
+            artist = key;
+            greater = counts[key];
+        }
+    }
+
+    return artist;
+};
+
+bestArtist(abbeyRoadRecords);
+
+
+// The Beatles and Abbey Road
+var theBeatles = abbeyRoadRecords.filter(function(record) {
+    return record.artist == "The Beatles";
+});
+
+var lastBeatlesSong = function(records) {
+    var year = 0;
+    theBeatles.forEach(function(record) {
+        year = record.year > year ? record.year : year;
+    });
+    return year;
+};
+
+lastBeatlesSong(theBeatles);
+
+
+// Sixties crazyness
+var year1969 = abbeyRoadRecords.filter(function(record) {
+    return record.year == 1969;
+});
+
+var sixtiesSong = function(records) {
+    var month = 0;
+    var song = "";
+    records.forEach(function(record) {
+        if (record.month > month) {
+            song = record.song;
+            month = record.month;
+        }
+    });
+    return song;
+};
+
+sixtiesSong(year1969);
