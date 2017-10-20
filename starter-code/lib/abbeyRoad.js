@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Sir Edward Elgar",
                       month: 11,
@@ -911,3 +912,63 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+// ITERATION 1 EXERCISE 4
+var novemberArtists = function(){
+  return _.countBy(abbeyRoadRecords,function(b){
+    if (b.month!==undefined && b.month==11)
+      return b.artist;
+  });
+};
+// Remove all null values from list
+var myList = novemberArtists();
+// Remove undefined
+var count = 0;
+var indexBigger;
+myList = _.each(myList, function removeUndefined(value, key) {
+  if (key == "undefined") {
+    delete myList[key];
+  }
+});
+_.each(myList, function removeUndefined(value, key) {
+  if (value > count){
+    count = value;
+    indexBigger = key;
+  }
+});
+console.log("Bigger artist in november was "+indexBigger);
+
+// ITERATION 2 EXERCISE 4
+var bestArtist = function () {
+  var listBest = _.countBy(abbeyRoadRecords,'artist');
+  listBest = _.toPairs(listBest);
+  var count = 0;
+  var indexBigger;
+  listBest.map(function(disc,index){
+    if (disc[1]>count){
+      count = disc[1];
+      indexBigger = index;
+    }
+  });
+  return "Artist with most discs is "+listBest[indexBigger][0]+" with "+listBest[indexBigger][1];
+};
+bestArtist();
+
+
+// ITERATION 3 EXERCISE 4 -- AFTER READ DOCUMENTATION DURING HOURS
+/*
+The Beatles and Abbey Road: When did the four of Liverpool recorded their last song in Abbey Road Studios?
+*/
+var lastBeatlesSong = function () {
+  // Filter artist Beatles > order by year > Select last position
+  return _.findLast(_.orderBy(_.filter(abbeyRoadRecords, {'artist':"The Beatles"}),'year'));
+};
+console.log(lastBeatlesSong());
+
+var sixtiesSong = function () {
+  return _.findLast(_.orderBy(_.filter(abbeyRoadRecords, function(discs) {
+   if(discs.year >= 1060 && discs.year <= 1969) return discs;
+  }),['year','month']));
+};
+
+sixtiesSong();
