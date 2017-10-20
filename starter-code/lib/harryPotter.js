@@ -19,3 +19,16 @@ birthdays.forEach( function() {
   console.log(sli);
   iter+=2;
 });
+
+var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
+                     "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
+
+function arrayPush() {
+  moreBirthdays.forEach(function(value, index){
+  birthdays.push(moreBirthdays[index]);
+
+});
+}
+
+
+arrayPush();
