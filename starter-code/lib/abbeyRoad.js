@@ -917,7 +917,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
 var novemberArtists = function(){
   return _.countBy(abbeyRoadRecords,function(b){
     if (b.month!==undefined && b.month==11)
-      return b.artist;b.month;
+      return b.artist;
   });
 };
 // Remove all null values from list
@@ -949,26 +949,26 @@ var bestArtist = function () {
       count = disc[1];
       indexBigger = index;
     }
-  })
+  });
   return "Artist with most discs is "+listBest[indexBigger][0]+" with "+listBest[indexBigger][1];
 };
 bestArtist();
-//Remember to execute the function to actually assing the value to the var.
 
-// ITERATION 3 EXERCISE 4
 
+// ITERATION 3 EXERCISE 4 -- AFTER READ DOCUMENTATION DURING HOURS
 /*
 The Beatles and Abbey Road: When did the four of Liverpool recorded their last song in Abbey Road Studios?
 */
 var lastBeatlesSong = function () {
-  //your code
+  // Filter artist Beatles > order by year > Select last position
+  return _.findLast(_.orderBy(_.filter(abbeyRoadRecords, {'artist':"The Beatles"}),'year'));
 };
-/*
-//Remember to execute the function to actually assing the value to the var.
-Sixties crazyness: The sixties were a crazy decade. Could you retrieve the last song it was recorded in Abbey Road Studios in the decade of 1960's?
+console.log(lastBeatlesSong());
 
 var sixtiesSong = function () {
-  //your code
+  return _.findLast(_.orderBy(_.filter(abbeyRoadRecords, function(discs) {
+   if(discs.year >= 1060 && discs.year <= 1969) return discs;
+  }),['year','month']));
 };
-//Remember to execute the function to actually assing the value to the var.
-*/
+
+sixtiesSong();
