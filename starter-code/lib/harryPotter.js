@@ -8,3 +8,14 @@
                    "4 October", "Filius Flitwick", "17 October", "Molly Weasley",
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
                    "6 December", "Charlie Weasley", "12 December"];
+
+
+var iter=0;
+birthdays.forEach( function() {
+  var array =[];
+
+  var sli = birthdays.slice( 0 +iter, 2 +iter);
+  array.push(sli);
+  console.log(sli);
+  iter+=2;
+});
