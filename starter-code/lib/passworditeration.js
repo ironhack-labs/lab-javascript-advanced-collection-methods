@@ -1,13 +1,14 @@
 var goodPsswd = "1234567890";
 var badPsswd = "1123456";
 var noRepeatChar = function (password) {
-  var arrayPassword = goodPsswd.split('');
+  var arrayPassword = password.split('');
 
     console.log(arrayPassword);
 
-    arrayPassword.filter(function( item, i, ar){
+    arrayPassword.filter(function( item, i, ar ){
       return ar.indexOf( item ) === i;
     }).join('');
+
 };
 
 noRepeatChar(goodPsswd);
