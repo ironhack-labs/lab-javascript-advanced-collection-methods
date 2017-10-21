@@ -10,25 +10,38 @@
                    "6 December", "Charlie Weasley", "12 December"];
 
 
-var iter=0;
-birthdays.forEach( function() {
-  var array =[];
+var orderedArray = [];
 
-  var sli = birthdays.slice( 0 +iter, 2 +iter);
-  array.push(sli);
-  console.log(sli);
-  iter+=2;
-});
+  function bdays () {
+
+    var bdayArray =[];
+    while (birthdays.length >0) {
+     bdayArray.push(birthdays.splice(0 , 2));
+    }
+    console.log(bdayArray);
+    return bdayArray;
+
+
+
+  }
+
+
+bdays();
+
 
 var moreBirthdays = ["Lily Evans", "30 January", "James Potter", "27 March",
                      "Dudley Dursley", "30 June", "Tom Riddle", "31 December"];
 
-function arrayPush() {
-  moreBirthdays.forEach(function(value, index){
-  birthdays.push(moreBirthdays[index]);
+function arrayPushMoreBday() {
 
-});
+
+    var bdayArray2 =[];
+    while (moreBirthdays.length >0) {
+     bdayArray2.push(moreBirthdays.splice(0 , 2));
+    }
+    console.log(bdayArray2);
+    return bdayArray2;
 }
 
 
-arrayPush();
+arrayPushMoreBday();
