@@ -21,7 +21,6 @@ function bdays () {
  return bdayArray;
 }
 
-
 bdays();
 
 
