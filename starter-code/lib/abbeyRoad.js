@@ -4,7 +4,7 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1931},
                       {song: "Elgar violin concerto",
                       artist: "Yehudi Menuhin",
-                      month: 07,
+                      month: 7,
                       year: 1932},
                       {song: "Piano Sonata, Funerailles",
                       artist: "Yehudi Menuhin",
@@ -24,13 +24,13 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       year: 1936},
                       {song: "I Can't Give You Anything but Love",
                       artist: "Adelaide Hall and Fats Waller",
-                      month: 08,
+                      month: 8,
                       year: 1938},
                       {song: "Symphony No. 5",
                       artist: "Vaughan Williams",
                       year: 1943},
                       {artist: "Glenn Miller and Dinah Shore",
-                      month: 09,
+                      month: 9,
                       year: 1944},
                       {song: "Quintet for Piano and Winds",
                       artist: "Dennis Brain Wind Ensemble with Colin Horsley",
@@ -911,3 +911,77 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+ var novemberArtists = function (list) {
+  var artistL =[];
+   list.forEach(function(elem){
+    if ((elem.year >= 1930)&&(elem.year < 1940)&&(elem.month === 11)) {
+      artistL.push(elem.artist);
+    }
+  });
+  artistL = artistL.filter(function(elem,i,arr){
+  return i === arr.indexOf(elem);
+  });
+  return artistL;
+};
+
+var artist = novemberArtists(abbeyRoadRecords);
+console.log(artist);
+
+
+var bestArtist = function (list) {
+  var highestRecordings =1;
+  var totalRecordings = 0;
+  var greatestArtist;
+  var artistList = abbeyRoadRecords.map(function(elem){
+ return elem.artist;
+ });
+ for(var i = 0; i < artistList.length ; i++){
+    for(var j = 0; j < artistList.length ; j++){
+      if(artistList[i] ===artistList[j] ){
+        totalRecordings ++;
+      }if(highestRecordings < totalRecordings){
+        highestRecordings = totalRecordings;
+        greatestArtist = artistList[i];
+      }
+    }totalRecordings =0;
+  }
+  return greatestArtist;
+
+};
+console.log(bestArtist(abbeyRoadRecords));
+
+
+var lastBeatlesSong = function (list) {
+  var year = 0;
+  var latestYear = 0;
+  var song;
+  var bList =list.filter(function(elem){
+    return elem.artist === "The Beatles";
+  });
+  bList.forEach(function(elem){
+    year = elem.year;
+    if(year > latestYear){
+      latestYear = year;
+      song = elem.song;
+    }
+  });return song;
+};
+console.log(lastBeatlesSong(abbeyRoadRecords));
+
+var sixtiesSong = function (list) {
+  var year = 0;
+  var latestYear = 0;
+  var song;
+  var songL =list.filter(function(elem){
+    return ((elem.year >= 1960)&&(elem.year < 1970));
+  });
+  songL.forEach(function(elem){
+    year = elem.year;
+    if(year > latestYear){
+      latestYear = year;
+      song = elem.song;
+    }
+  });return song;
+};
+console.log(sixtiesSong(abbeyRoadRecords));
