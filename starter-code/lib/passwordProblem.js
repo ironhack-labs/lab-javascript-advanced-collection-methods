@@ -57,7 +57,7 @@ var goodPsswd = "1234567890";
 var badPsswd = "12345678901234567890";
 var trimPassword = function (password) {
  if (password.length > 10) {
-  password = password.slice(10 ,password.length -1);
+  password = password.slice(10 ,password.length);
  }
  return password;
 };
