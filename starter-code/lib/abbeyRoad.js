@@ -912,18 +912,16 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
 var novemberArtists = function () {
-  // 1. Extract Artist that recorded in november
+  // 1. Extract Artist that recorded in november. Use 'filter'
+  // to filter out months not recorded in november and producing a new a array
   var november = abbeyRoadRecords.filter( function(singer) {
     return singer.month == 11;
   });
-
   // 2. map filtered array.
   november.map(function (x) {
     console.log(x.artist);
     return x.artist;
-
   });
   console.log(november);
-
 
 }();
