@@ -7,12 +7,13 @@ var noRepeatChar = function (password) {
 
     for (var i = 0; i < sortedArray.length; i++) {
       if ( sortedArray[i] == sortedArray[ i + 1]) {
-        console.log( 'Digit repeated' );
+        console.log( 'Bad Password!' );
       }
       else {
         console.log('Good Password');
       }
 
+      break;
     }
 
 
