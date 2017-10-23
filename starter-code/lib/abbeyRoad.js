@@ -917,6 +917,12 @@ var novemberArtists = function () {
     return singer.month == 11;
   });
 
+  // 2. map filtered array.
+  november.map(function (x) {
+    console.log(x.artist);
+    return x.artist;
+
+  });
   console.log(november);
 
 
