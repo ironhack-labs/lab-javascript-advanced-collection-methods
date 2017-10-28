@@ -1,6 +1,6 @@
 ![](https://i.imgur.com/1QgrNNw.png)
 
-# JS | Advanced Collection Methods Exercises
+# JS | Advanced Collection Methods Exercises | Test Maxence
 
 These exercises will help you practice really useful JavaScript array methods.
 
