@@ -24,3 +24,34 @@ noRepeatChar(goodPsswd);
 
 noRepeatChar(badPsswd);
 // "Ouch, bad password."
+
+var goodPsswd = "1234567890";
+var badPsswd = "1a234567890";
+var onlyNumbers = function (password) {
+ //your code goes here
+var newPass = password.split("");
+var newArray = newPass.filter(function(element){
+   var numbers = ['0','1','2','3','4','5','6','7','8','9'];
+   if(numbers.indexOf(element)==-1){
+     return false;
+   } else return true;
+});
+if(newArray.length < newPass.length)
+{
+  return console.log("Ouch, bad password.");
+} else return console.log("Good password.");
+};
+
+onlyNumbers(goodPsswd);
+// "Good password."
+
+onlyNumbers(badPsswd);
+// "Ouch, bad password."
+
+var goodPsswd = "1234567890";
+var badPsswd = "12345678901234567890";
+var trimPassword = function (password) {
+ //your code goes here
+};
+trimPassword(badPsswd);
+// "1234567890"
