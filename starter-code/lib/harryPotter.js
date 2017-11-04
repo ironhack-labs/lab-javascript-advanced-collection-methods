@@ -9,4 +9,10 @@
                    "30 October", "Bill Weasley", "29 November", "Rubeus Hagrid",
                    "6 December", "Charlie Weasley", "12 December"];
 
-
+var birthd = birthdays.reduce(function(acc, elem, index) {
+  if (index % 2 === 0) {
+    acc.push([elem, birthdays[index+1]]);
+  }
+  
+  return acc;
+}, [])
