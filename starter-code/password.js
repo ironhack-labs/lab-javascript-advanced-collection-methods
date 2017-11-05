@@ -51,6 +51,14 @@ onlyNumbers(badPsswd);
 var goodPsswd = "1234567890";
 var badPsswd = "12345678901234567890";
 var trimPassword = function (password) {
+var newPass = password.split("");
+var shortPass = newPass.filter(function(element,index){
+    if(index>9){
+      return false;
+    }else return true;
+});
+
+return shortPass;
  //your code goes here
 };
 trimPassword(badPsswd);
