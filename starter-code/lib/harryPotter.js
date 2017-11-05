@@ -56,8 +56,7 @@ var moreBirthdays = [ "Lily Evans", "30 January", "James Potter", "27 March",
 
 moreBirthdays = organizeBirthdays(moreBirthdays);
 
-for( var i = 0; i < moreBirthdays.length; i++ ) {
-    birthdays.push(moreBirthdays[i]);
-}
-
+moreBirthdays.map(function(element){
+    birthdays.push(element);
+});
 console.log(birthdays);
