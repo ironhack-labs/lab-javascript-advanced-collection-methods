@@ -120,11 +120,12 @@ trimPassword(badPsswd);
 
 //Recorded in November
 var novemberArtists = function(array) {
-  var newArray = [];
-  array.forEach(function(element) {
-    element.month === 11 ? newArray.push(element) : newArray;
+  array = array.filter(function(element) {
+    return element.month === 11;
+  }).map(function(element) {
+    return element.artist;
   });
-  return newArray;
+  return array;
 };
 
 console.log(novemberArtists(abbeyRoadRecords));
@@ -134,12 +135,11 @@ var bestArtist = function(array) {
   var current = 0;
   var art = "";
   for (i = 0; i < array.length; i++) {
-    var acc = 0;
-    array.forEach(function(element) {
-      element.artist === array[i].artist ? acc++ : acc;
+    bigger = array.filter(function(element) {
+      return element.artist === array[i].artist;
     });
-    if (acc > current) {
-      current = acc;
+    if (bigger.length > current) {
+      current = bigger.length;
       art = array[i].artist;
     }
   }
@@ -150,11 +150,10 @@ bestArtist(abbeyRoadRecords);
 
 //Last Beatles´s song
 var lastBeatlesSong = function(array) {
-  var data;
-  for (i = 0; i < array.length; i++) {
-    array[i].artist === "The Beatles" ? data = array[i] : data;
-  }
-  return data;
+  array = array.filter(function(element) {
+    return element.artist === "The Beatles";
+  });
+  return array[array.length - 1];
 };
 
 console.log(lastBeatlesSong(abbeyRoadRecords));
