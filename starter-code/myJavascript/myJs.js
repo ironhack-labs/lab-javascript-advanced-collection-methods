@@ -80,13 +80,11 @@ console.log(definitiveArray);
 var goodPsswd = "1234567890";
 var badPsswd = "1123456";
 var noRepeatChar = function(password) {
-  var acc = 0;
-  for (i = 0; i < password.length; i++) {
-    for (j = i + 1; j < password.length; j++) {
-      password[i] === password[j] ? acc++ : acc;
-    }
-  }
-  acc > 0 ? console.log("Ouch, bad password.") : console.log("Good password.");
+  var container = "Good password.";
+  password.split("").sort(function(a, b) {
+    container = a - b === 0 ? "Ouch, bad password." : container;
+  });
+  console.log(container);
 }
 
 noRepeatChar(goodPsswd);
