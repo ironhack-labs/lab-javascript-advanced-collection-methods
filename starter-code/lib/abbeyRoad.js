@@ -911,3 +911,72 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+// November looks like a good month
+var novemberArtists = function (array) {
+    var novemberArtists = [];
+    array.map(function(element) {
+        if (element.month == 11) {
+            novemberArtists.push(element.artist);
+        }
+    })
+    return novemberArtists; 
+};
+console.log("-------------------------------------------------------------");
+console.log("November artists:")
+console.log("-------------------------------------------------------------");
+console.log(novemberArtists(abbeyRoadRecords));
+console.log("-------------------------------------------------------------");
+
+// Artists like to repeat
+var bestArtist = function (array) {
+    // Object = { artist: num }
+    var artirstRepetitions = abbeyRoadRecords.reduce(function (acc, curr) {
+        acc[curr.artist] ? acc[curr.artist]++ : acc[curr.artist] = 1;
+        return acc;
+    }, {});
+    //console.log(artirstRepetitions);
+    
+    // Create an array from object
+    // array = [ artist, num ]
+    var artirstRepetitionsArray = [];
+    for (var artist in artirstRepetitions) {
+        artirstRepetitionsArray.push([artist, artirstRepetitions[artist]]);
+    }
+    // Sort array from num -> [1]
+    artirstRepetitionsArray.sort(function(a, b) {
+        return b[1] - a[1];
+    });
+    // Select first
+    return artirstRepetitionsArray[0];
+}
+var mostArtist = bestArtist(abbeyRoadRecords);
+console.log("The most artist is: " + mostArtist[0].toUpperCase() + " with: " + mostArtist[1] + " songs.");
+console.log("-------------------------------------------------------------");
+
+// The Beatles and Abbey Road
+var lastBeatlesSong = function (array) {
+    var lastSong = array.filter(function(element) {
+        return element.artist === "The Beatles";
+    });
+    lastSong.sort(function(a, b) {
+        return b['year'] - a['year'];
+    })
+    return lastSong[0];
+}
+console.log("The last Beatle song is:")
+console.log("-------------------------------------------------------------");
+console.log(lastBeatlesSong(abbeyRoadRecords));
+console.log("-------------------------------------------------------------");
+
+// Sixties crazyness
+var sixtiesSong = function (array) {
+    var songs60 = array.filter(function(element) {
+        return (element.year >= 1960 && element.year <= 1969);
+    })
+    return songs60;
+};
+console.log("60's songs:")
+console.log("-------------------------------------------------------------");
+console.log(sixtiesSong(abbeyRoadRecords));
+console.log("-------------------------------------------------------------");
