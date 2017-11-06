@@ -1519,7 +1519,7 @@ function countArtist(arrayAbbey) {
     return prev;
   }, {});
 }
-var bestArtist = function () {
+var bestArtist = function() {
   var position = 0,
     max = 0;
   Object.values(countArtist(abbeyRoadRecords)).forEach(function(el, index) {
@@ -1530,14 +1530,21 @@ var bestArtist = function () {
   });
   return Object.keys(countArtist(abbeyRoadRecords))[position];
 };
-function getBestArtist() {
-  var position = 0,
-    max = 0;
-  Object.values(countArtist(abbeyRoadRecords)).forEach(function(el, index) {
-    if (el > max) {
-      max = el;
-      position = index;
-    }
-  });
-  return Object.keys(countArtist(abbeyRoadRecords))[position];
-}
+
+var lastBeatlesSong = function beatlesSongs(arrayAbbey) {
+  var songs = arrayAbbey.reduce(function(prev, next) {
+    if (next.artist === "The Beatles")
+      prev.push(next.song);
+    return prev;
+  }, []);
+  return songs[songs.length - 1];
+};
+
+var sixtiesSong = function (arrayAbbey) {
+  var songs = arrayAbbey.reduce(function(prev, next) {
+    if (next.year === 1969)
+      prev.push(next.song);
+    return prev;
+  }, []);
+  return songs[songs.length - 1];
+};
