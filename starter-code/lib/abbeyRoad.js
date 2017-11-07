@@ -1540,11 +1540,12 @@ var lastBeatlesSong = function beatlesSongs(arrayAbbey) {
   return songs[songs.length - 1];
 };
 
-var sixtiesSong = function (arrayAbbey) {
-  var songs = arrayAbbey.reduce(function(prev, next) {
-    if (next.year === 1969)
-      prev.push(next.song);
-    return prev;
-  }, []);
-  return songs[songs.length - 1];
+var sixtiesSong = function(arrayAbbey) {
+  var songs = arrayAbbey.filter(function(el) {
+    return el.year === 1969;
+  }, {});
+  var order = songs.sort(function(a, b) {
+    return (b.month - a.month);
+  });
+  return order[0];
 };
