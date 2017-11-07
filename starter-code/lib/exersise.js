@@ -157,3 +157,67 @@ var trimPassword2 = function (password) {
 trimPassword2(badPsswd);
 
 //Iteration 4
+
+      //Artists who recorded in November
+
+var novemberArtists = function (array) {
+
+   var artistsArray = array.filter(function (element) {
+    return element.month === 11;
+  }).map(function (element) {
+    return element.artist;
+  });
+
+  return artistsArray;
+};
+
+console.log(novemberArtists(abbeyRoadRecords));
+
+      //Artist who has recorded the Most
+
+var bestArtist = function (array) {
+  var moreTimesArtistRecorded = 0;
+  var mostRecordedArtist = '';
+
+  for (var i = 0; i < array.length; i++) {
+    var mostRecorded = array.filter(function (element) {
+      return element.artist === array[i].artist;
+    });
+
+    if (mostRecorded.length > moreTimesArtistRecorded) {
+      moreTimesArtistRecorded = mostRecorded.length;
+      mostRecordedArtist = array[i].artist;
+    }
+  }
+  return mostRecordedArtist;
+};
+
+console.log(bestArtist(abbeyRoadRecords));
+
+      //Last Beatle song
+
+var lastBeatlesSong = function (array) {
+  var song = array.filter(function (element) {
+    return element.artist === 'The Beatles';
+  }).sort(function (a, b) {
+    return b.year - a.year;
+  });
+
+  return song[0];
+};
+
+console.log(lastBeatlesSong(abbeyRoadRecords));
+
+      //Last 60's song
+
+var sixtiesSong = function (array) {
+  var song = array.filter(function (element) {
+    return element.year >= 1960 && element.year < 1970;
+  }).sort(function (a, b) {
+    return b.year - a.year;
+  });
+
+  return song[0];
+};
+
+console.log(sixtiesSong(abbeyRoadRecords));
