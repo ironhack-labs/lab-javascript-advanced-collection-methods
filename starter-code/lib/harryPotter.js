@@ -29,7 +29,17 @@ var mBirthd = moreBirthdays.reduce(function(acc,elem,index){
 },[])
 
 
+
+
+
+
+
 //The office//
+
+
+
+
+
 var responses = [ "This is the best job ever!",
                   "Satisfied.",
                   "At least I get paid.",
