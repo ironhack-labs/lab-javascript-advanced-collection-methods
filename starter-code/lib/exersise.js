@@ -91,16 +91,69 @@ console.log(finalBirthdaysArray);
 
 //Iteration 3
 
+    //No repeat
+
 var goodPsswd = "1234567890";
 var badPsswd = "1123456";
+
 var noRepeatChar = function (password) {
- 
+  var repeatedChars = 0;
+
+  password.split('').sort(function(a,b) {
+    if (a - b === 0) {
+      repeatedChars++;
+    }
+  });
+
+  if (repeatedChars > 0) {
+    console.log('Ouch, bad password.');
+  } else {
+    console.log('Good password.');
+  }
 };
 
 noRepeatChar(goodPsswd);
-
-
 noRepeatChar(badPsswd);
 
+    //Only numbers
+
+var goodPsswd = "1234567890";
+var badPsswd = "1a234567890";
+var onlyNumbers = function (password) {
+  if (isNaN(password) === true) {
+    console.log('Ouch, bad password.');
+  } else {
+    console.log('Good password.');
+  }
+};
+
+onlyNumbers(goodPsswd);
+// "Good password."
+
+onlyNumbers(badPsswd);
+// "Ouch, bad password."
+
+    //Only 10 digits
+
+var goodPsswd = "1234567890";
+var badPsswd = "12345678901234567890";
+
+        //Method 1
+var trimPassword = function (password) {
+
+  password = password.length > 10 ? password = password.split('').splice(0, 10).join('') : password;
+  console.log(password);
+};
+trimPassword(badPsswd);
+
+        //Method 2
+
+var trimPassword2 = function (password) {
+
+  password = password.length > 10 ? password.substring(0, 10) : password;
+  console.log(password);
+};
+
+trimPassword2(badPsswd);
 
 //Iteration 4
