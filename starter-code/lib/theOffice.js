@@ -10,7 +10,7 @@ var responses = [ "This is the best job ever!",
     return array[Math.floor(Math.random() * array.length)];
   }
 
-randomResponse(responses);
+//randomResponse(responses);
 
 function department(){
   var answer =[];
@@ -19,7 +19,7 @@ function department(){
           answer.push(randomResponse(responses))
       }
       console.log(answer)
-      
+
 
   return answer;
 }
@@ -30,6 +30,6 @@ function totalDepartment(){
     answerFinal.push(department())
   }
   console.log(answerFinal)
-  
-  
+
+
 }

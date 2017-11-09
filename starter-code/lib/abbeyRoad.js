@@ -911,3 +911,49 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+var novemberArtists = function () {
+  var flag ='';
+  for(var i=0; i < abbeyRoadRecords.length; i++){
+    if(abbeyRoadRecords[i].year >= 1930 && abbeyRoadRecords[i].year <= 1939){
+      flag += abbeyRoadRecords[i].artist;
+    }
+  }
+  return flag;
+
+};
+console.log(novemberArtists());
+
+
+/*var bestArtist = function () {
+   for(var i=0; i< abbeyRoadRecords.length; i++){
+   }
+};*/
+
+var lastBeatlesSong = function () {
+  var lastSong={year:0};
+   for(var i = 0; i<abbeyRoadRecords.length; i++){
+     if(abbeyRoadRecords[i].artist === 'The Beatles' && abbeyRoadRecords[i].year > lastSong.year){
+       lastSong = abbeyRoadRecords[i];
+     }
+   }
+   return lastSong;
+};
+
+console.log(lastBeatlesSong());
+
+var sixtiesSong = function () {
+  var lastSong={year:0, month:0};
+  for(var i = 0; i<abbeyRoadRecords.length; i++){
+    if(abbeyRoadRecords[i].year >= 1960 && abbeyRoadRecords[i].year < 1970 && abbeyRoadRecords[i].year > lastSong.year){
+      if(abbeyRoadRecords[i].month > lastSong.month){
+        lastSong = abbeyRoadRecords[i];
+      }
+
+    }
+
+  }
+  return lastSong;
+};
+console.log(sixtiesSong());

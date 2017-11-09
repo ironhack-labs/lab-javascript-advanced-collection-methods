@@ -13,17 +13,21 @@ var birthd = birthdays.reduce(function(acc, elem, index) {
   if (index % 2 === 0) {
     acc.push([elem, birthdays[index+1]]);
   }
-  
+
   return acc;
 }, [])
 
 var moreBirthdays = [ "Lily Evans", "30 January", "James Potter", "27 March", "Dudley Dursley", "30 June", "Tom Riddle", "31 December" ];
 
 var mBirthd = moreBirthdays.reduce(function(acc,elem,index){
-  
+
   if (index % 2 === 0) {
     acc.push([elem, moreBirthdays[index+1]]);
   }
-  
+
   return acc;
 },[])
+
+var newBirthdays = birthd.concat(mBirthd);
+
+console.log('Nuevo array: ' + newBirthdays);
