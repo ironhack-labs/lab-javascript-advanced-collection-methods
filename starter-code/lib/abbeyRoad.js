@@ -911,3 +911,58 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+//---------November looks like a good month------------//
+
+var novemberArtists = function () {
+  abbeyRoadRecords.forEach(function(record){
+    if (record.month===11){console.log(record.artist)}
+  })
+};
+novemberArtists()
+
+//---------Artists like to repeat------------/
+/*
+var bestArtist = function () {
+  var artists = [];
+  abbeyRoadRecords.forEach(function(record){
+  artists.push(record.artist);
+  })
+  artists.sort()
+  var counts = {};
+  artists.forEach(function(x) { counts[x] = (counts[x] || 0)+1; });
+  console.log(counts);
+};
+bestArtist()
+*/
+//---------The Beatles and Abbey Road------------//
+//Write a function that returns the song object for the last recording of the four from Liverpool at Abbey Road Studios.
+
+var lastBeatlesSong = function () {
+  var beatlesSongs =[]
+  abbeyRoadRecords.forEach(function(record){
+  if (record.artist === "The Beatles") {
+    beatlesSongs.push(record.artist, record.song)
+  }
+  })
+  console.log("The last Beatles\'s song recorded in Abbey Road is " +  beatlesSongs[beatlesSongs.length-1]);  
+};
+
+lastBeatlesSong();
+// Don't forget to invoke the function to see the result
+
+//---------Sixties crazyness------------//
+//The sixties were a crazy decade. Write a function that returns the object the last song that was recorded in Abbey Road Studios in the 1960's.
+
+var sixtiesSong = function () {
+  var sixtiesSongs = [];
+  abbeyRoadRecords.forEach(function(record){
+    if (record.year >=1960 && record.year<=1969) {
+      sixtiesSongs.push(record.song);
+    }
+  })
+  console.log('The last song recorded in the 60s was ' + sixtiesSongs[sixtiesSongs.length-1]);
+  
+};
+sixtiesSong(); 
+
