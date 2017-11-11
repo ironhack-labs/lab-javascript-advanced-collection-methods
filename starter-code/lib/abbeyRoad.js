@@ -911,3 +911,16 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+
+ novemberArtists = abbeyRoadRecords.filter(function (abbeyRoadRecords) {
+   return abbeyRoadRecords.month === 11;
+ });
+ console.log(novemberArtists);
+ var bestArtist = function () {
+  //your code
+};
+
+var lastBeatlesSong = function () {
+  //your code
+};
