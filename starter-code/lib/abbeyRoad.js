@@ -911,3 +911,10 @@ var abbeyRoadRecords = [{song: "Land of Hope and Glory",
                       {song: "Love Divine III",
                       artist: "Jan Mulder with The Royal Philharmonic Orchestra",
                       year: 2016}];
+
+                      var novemberArtists = abbeyRoadRecords.filter(function (elem) {
+                        //your code
+                        return elem.month === 11;
+                      });
+                      // Don't forget to invoke the function to see the result
+                      novemberArtists;
