@@ -79,7 +79,6 @@ function combineArr(arr1, arr2) {
 
 // Iteration 3 - The Password Problem
 
-
 // Checking for repeated characters
 let noRepeatChar = function(password) {
   for (let char = 0; char < password.length; char++) {
@@ -95,10 +94,10 @@ let noRepeatChar = function(password) {
 // let badPsswd = '1123456';
 
 // console.log(noRepeatChar(goodPsswd));
-// 'Good password.'
+// // 'Good password.'
 
 // console.log(noRepeatChar(badPsswd));
-// 'Ouch, bad password.'
+// // 'Ouch, bad password.'
 
 // Checking if the password has just numbers
 let onlyNumbers = function(password) {
@@ -109,13 +108,22 @@ let onlyNumbers = function(password) {
   return 'Good password.';
 };
 
+// let goodPsswd = '1234567890';
+// let badPsswd = '1a234567890';
+
+// console.log(onlyNumbers(goodPsswd));
+// // 'Good password.'
+
+// console.log(onlyNumbers(badPsswd));
+// // 'Ouch, bad password.'
+
+// Trimming strings over 10 characters
+let trimPassword = function (password) {
+ return password.slice(0, 10);
+};
+
 let goodPsswd = '1234567890';
-let badPsswd = '1a234567890';
+let badPsswd = '12345678901234567890';
 
-console.log(onlyNumbers(goodPsswd));
-// 'Good password.'
-
-console.log(onlyNumbers(badPsswd));
-// 'Ouch, bad password.'
-
-
+// console.log(trimPassword(badPsswd));
+// // '1234567890'
