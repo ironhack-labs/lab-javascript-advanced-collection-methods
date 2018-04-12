@@ -63,3 +63,16 @@ function organizeBdays(arr) {
 
   return organizedBdays;
 }
+
+// Array with additional bdays
+let moreBirthdays = [ 
+  'Lily Evans', '30 January', 'James Potter', '27 March', 'Dudley Dursley', '30 June', 'Tom Riddle', '31 December'
+];
+
+// Combining the content of the two bday arrays
+function combineArr(arr1, arr2) {
+  let bigMessyArr = arr1.concat(arr2);
+  return organizeBdays(bigMessyArr);
+}
+
+console.log(combineArr(birthdays, moreBirthdays));
