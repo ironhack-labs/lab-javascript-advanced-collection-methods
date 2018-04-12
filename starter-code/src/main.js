@@ -75,4 +75,24 @@ function combineArr(arr1, arr2) {
   return organizeBdays(bigMessyArr);
 }
 
-console.log(combineArr(birthdays, moreBirthdays));
+// console.log(combineArr(birthdays, moreBirthdays));
+
+// Iteration 3 - The Password Problem
+
+let goodPsswd = '1234567890';
+let badPsswd = '1123456';
+let noRepeatChar = function (password) {
+  for (let char = 0; char < password.length; char++) {
+    if (password.indexOf(password[char], char + 1) !== -1 ) {
+      return 'Ouch, bad password.';
+    }
+  }
+
+  return 'Good password.';
+};
+
+// console.log(noRepeatChar(goodPsswd));
+// 'Good password.'
+
+// console.log(noRepeatChar(badPsswd));
+// 'Ouch, bad password.'
