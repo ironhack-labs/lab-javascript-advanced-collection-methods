@@ -79,9 +79,9 @@ function combineArr(arr1, arr2) {
 
 // Iteration 3 - The Password Problem
 
-let goodPsswd = '1234567890';
-let badPsswd = '1123456';
-let noRepeatChar = function (password) {
+
+// Checking for repeated characters
+let noRepeatChar = function(password) {
   for (let char = 0; char < password.length; char++) {
     if (password.indexOf(password[char], char + 1) !== -1 ) {
       return 'Ouch, bad password.';
@@ -91,8 +91,31 @@ let noRepeatChar = function (password) {
   return 'Good password.';
 };
 
+// let goodPsswd = '1234567890';
+// let badPsswd = '1123456';
+
 // console.log(noRepeatChar(goodPsswd));
 // 'Good password.'
 
 // console.log(noRepeatChar(badPsswd));
 // 'Ouch, bad password.'
+
+// Checking if the password has just numbers
+let onlyNumbers = function(password) {
+  if (isNaN(password)) {
+    return 'Ouch, bad password.';
+  }
+
+  return 'Good password.';
+};
+
+let goodPsswd = '1234567890';
+let badPsswd = '1a234567890';
+
+console.log(onlyNumbers(goodPsswd));
+// 'Good password.'
+
+console.log(onlyNumbers(badPsswd));
+// 'Ouch, bad password.'
+
+
