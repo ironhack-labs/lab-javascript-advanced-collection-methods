@@ -9,24 +9,26 @@ const responses = [
 
 // Selects at random an element from responses.
 function selectAtRandom(arr) {
-  return responses[Math.floor(Math.random() * arr.length)];
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // Creates an array of 10 random responses.
-function makingUpDepAnswers() {
+function makingUpDepAnswers(arr) {
   let depAnswers = [];
   while(depAnswers.length < 10) {
-    depAnswers.push(selectAtRandom(responses));
+    depAnswers.push(selectAtRandom(arr));
   }
 
   return depAnswers;
 }
 
-function makeAllDepAnswers() {
+function makeAllDepAnswers(arr) {
   let allDepAnswers = [];
-  while(depAnswers.length < 5) {
-    allDepAnswers.push(makingUpDepAnswers());
+  while(allDepAnswers.length < 5) {
+    allDepAnswers.push(makingUpDepAnswers(arr));
   }
 
   return allDepAnswers;
 }
+
+console.log(makeAllDepAnswers(responses));
