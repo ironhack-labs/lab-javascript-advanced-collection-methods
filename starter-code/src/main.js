@@ -127,3 +127,30 @@ let badPsswd = '12345678901234567890';
 
 // console.log(trimPassword(badPsswd));
 // // '1234567890'
+
+// Iteration 4 - Abbey Road Studios
+
+let abbeyRoadRecords = [
+  {song: 'Land of Hope and Glory', artist: 'Sir Edward Elgar', month: 11, year: 1931},
+  {song: 'Elgar violin concerto', artist: 'Yehudi Menuhin', month: 07, year: 1932},
+  {song: 'Piano Sonata, Funerailles', artist: 'Yehudi Menuhin', month: 11, year: 1932},
+  {song: '', artist: 'Richard Tauber', month: 11, year: 1933},
+  {song: 'Suits No. 1 & 2 Johann Sebastian Bach\'s Cello Suites', artist: 'Pablo Casals', month: 11, year: 1933},
+  {song: 'Suits No. 1 & 2 Johann Sebastian Bach\'s Cello Suites', artist: 'Pablo Casals', month: 11, year: 1936},
+  {song: 'I Can\'t Give You Anything but Love', artist: 'Adelaide Hall and Fats Waller', month: 08, year: 1938},
+  {song: 'Symphony No. 5', artist: 'Vaughan Williams', year: 1943},
+]
+
+// Names of artists who recorded in November
+let novemberArtists = function(arr) {
+  let arrOfArtists = [];
+  arr.forEach(obj => {
+    if (obj.month === 11) {
+      arrOfArtists.push(obj.artist);
+    }
+  })
+
+  return arrOfArtists;
+};
+
+// console.log(novemberArtists(abbeyRoadRecords));
