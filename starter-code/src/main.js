@@ -154,3 +154,28 @@ let novemberArtists = function(arr) {
 };
 
 // console.log(novemberArtists(abbeyRoadRecords));
+
+// Name of the artist who rocerded more songs
+let findBestArtist = function(arr) {
+  let artistArr = [];
+  let recordCounter = 0;
+  let bestArtist = '';
+  let tempCounter = 1;
+  arr.forEach(obj => { artistArr.push(obj.artist); });
+  let sortedArtists = artistArr.sort();
+  for (let i = 0; i < sortedArtists.length; i++) {
+    if (sortedArtists[i] === sortedArtists[i + 1]) {
+      tempCounter++;
+      if (tempCounter > recordCounter) {
+        recordCounter = tempCounter;
+        bestArtist = sortedArtists[i];
+      }
+    } else {
+      tempCounter = 1;
+    }
+  }
+
+  return bestArtist;
+};
+
+// console.log(findBestArtist(abbeyRoadRecords));
