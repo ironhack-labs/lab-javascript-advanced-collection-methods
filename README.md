@@ -14,12 +14,12 @@ These exercises will help you practice really useful JavaScript array methods.
 Upon completion, run the following commands
 ```
 $ git add .
-$ git commit -m "done"
+$ git commit -m 'done'
 $ git push origin master
 ```
 Navigate to your repo and create a Pull Request -from your master branch to the original repository master branch.
 
-In the Pull request name, add your name and last names separated by a dash "-"
+In the Pull request name, add your name and last names separated by a dash '-'
 
 ## Deliverables
 
@@ -37,20 +37,20 @@ Since your company has 5 departments with 10 people working in each department, 
 
 Employee responses can be one of:
 
-- "This is the best job ever!"
-- "Satisfied."
-- "At least I get paid."
-- "I'm looking for another job."
-- "I don't want to answer."
+- 'This is the best job ever!'
+- 'Satisfied.'
+- 'At least I get paid.'
+- 'I'm looking for another job.'
+- 'I don't want to answer.'
 
 
 1) Create an array for the predetermined responses.
 ```javascript
-var responses = [ "This is the best job ever!",
-                  "Satisfied.",
-                  "At least I get paid.",
-                  "I'm looking for another job.",
-                  "I don't want to answer." ];
+var responses = [ 'This is the best job ever!',
+                  'Satisfied.',
+                  'At least I get paid.',
+                  'I'm looking for another job.',
+                  'I don't want to answer.' ];
 ```
 
 2) Create a function that randomly selects an item from the `responses` array.
@@ -85,8 +85,8 @@ Let's organize these Harry Potter character birthdays. Unlike in Harry's world, 
 2) Now that we have our two-dimensional array, we realized that some characters and their birthdays were missing. After a little more digging, we found another array with more birthdays from the book. Paste it into your JavaScript file.
 
 ```javascript
-var moreBirthdays = [ "Lily Evans", "30 January", "James Potter", "27 March",
-                      "Dudley Dursley", "30 June", "Tom Riddle", "31 December" ];
+var moreBirthdays = [ 'Lily Evans', '30 January', 'James Potter', '27 March',
+                      'Dudley Dursley', '30 June', 'Tom Riddle', '31 December' ];
 ```
 
 3) Luckily, the `moreBirthdays` array follows the same structure as the previous array. That means we can use our function from step 1 to restructure the birthdays into a second two-dimensial array.
@@ -109,45 +109,45 @@ Rules we will enforce on our users' passwords:
 **Unique characters:** Create a function that checks that each character only appears once in the password. It should receives a password and display _Ouch, bad password._ in the console if there are any repeated characters. Otherwise, it should display _Good password._ in the console.
 
 ```javascript
-var goodPsswd = "1234567890";
-var badPsswd = "1123456";
+var goodPsswd = '1234567890';
+var badPsswd = '1123456';
 var noRepeatChar = function (password) {
  //your code goes here
 };
 
 noRepeatChar(goodPsswd);
-// "Good password."
+// 'Good password.'
 
 noRepeatChar(badPsswd);
-// "Ouch, bad password."
+// 'Ouch, bad password.'
 ```
 
 **Only numbers:** Create a function that checks that a password only has numbers. It should receives a password and display _Ouch, bad password._ in the console if there are any characters that aren't numbers. Otherwise, it should display _Good password._ in the console.
 
 ```javascript
-var goodPsswd = "1234567890";
-var badPsswd = "1a234567890";
+var goodPsswd = '1234567890';
+var badPsswd = '1a234567890';
 var onlyNumbers = function () {
  //your code goes here
 };
 
 onlyNumbers(goodPsswd);
-// "Good password."
+// 'Good password.'
 
 onlyNumbers(badPsswd);
-// "Ouch, bad password."
+// 'Ouch, bad password.'
 ```
 
 **Ten digits only:** Create a function thats trim the password down to only 10 digits. The function should receive a password, discard all characters after the 10th (index 9 of the string) and display the trimed password in the console.
 
 ```javascript
-var goodPsswd = "1234567890";
-var badPsswd = "12345678901234567890";
+var goodPsswd = '1234567890';
+var badPsswd = '12345678901234567890';
 var trimPassword = function (password) {
  //your code goes here
 };
 trimPassword(badPsswd);
-// "1234567890"
+// '1234567890'
 ```
 
 ## Iteration 4 - Abbey Road Studios
