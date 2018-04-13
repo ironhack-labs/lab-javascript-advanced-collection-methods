@@ -143,6 +143,8 @@ let abbeyRoadRecords = [
   {song: 'Rubber Soul', artist: 'The Beatles', year: 1965},
   {song: 'Revolver', artist: 'The Beatles', year: 1966},
   {song: 'The Beatles (aka \'The White song\')', artist: 'The Beatles', year: 1968},
+  {song: 'Bloodsucker', artist: 'Deep Purple', month: 11, year: 1969},
+  {song: 'Shades of Rock', artist: 'The Shadows', year: 1970},
 ]
 
 // Names of artists who recorded in November
@@ -185,7 +187,7 @@ let findBestArtist = function(arr) {
 // console.log(findBestArtist(abbeyRoadRecords));
 
 // Find last Beatles song
-let findLastBeatlesSong = function (arr) {
+let findLastBeatlesSong = function(arr) {
   let lastBeatlesSong = {year: 0};
   for (let i = 0; i < arr.length; i++) {
     if (arr[i].artist === 'The Beatles' && arr[i].year > lastBeatlesSong.year) {
@@ -197,3 +199,17 @@ let findLastBeatlesSong = function (arr) {
 };
 
 // console.log(findLastBeatlesSong(abbeyRoadRecords));
+
+// Find last 60's song
+let findLastSixtiesSong = function(arr) {
+  let lastSixtiesSong = {year: 0};
+  arr.forEach(elem => {
+    if (elem.year >= lastSixtiesSong.year && elem.year < 1970) {
+      lastSixtiesSong = elem;
+    }
+  })
+
+  return lastSixtiesSong;
+};
+
+console.log(findLastSixtiesSong(abbeyRoadRecords));
