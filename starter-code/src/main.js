@@ -139,6 +139,10 @@ let abbeyRoadRecords = [
   {song: 'Suits No. 1 & 2 Johann Sebastian Bach\'s Cello Suites', artist: 'Pablo Casals', month: 11, year: 1936},
   {song: 'I Can\'t Give You Anything but Love', artist: 'Adelaide Hall and Fats Waller', month: 08, year: 1938},
   {song: 'Symphony No. 5', artist: 'Vaughan Williams', year: 1943},
+  {song: 'Help', artist: 'The Beatles', year: 1965},
+  {song: 'Rubber Soul', artist: 'The Beatles', year: 1965},
+  {song: 'Revolver', artist: 'The Beatles', year: 1966},
+  {song: 'The Beatles (aka \'The White song\')', artist: 'The Beatles', year: 1968},
 ]
 
 // Names of artists who recorded in November
@@ -179,3 +183,17 @@ let findBestArtist = function(arr) {
 };
 
 // console.log(findBestArtist(abbeyRoadRecords));
+
+// Find last Beatles song
+let findLastBeatlesSong = function (arr) {
+  let lastBeatlesSong = {year: 0};
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].artist === 'The Beatles' && arr[i].year > lastBeatlesSong.year) {
+      lastBeatlesSong = arr[i];
+    } 
+  }
+
+  return lastBeatlesSong;
+};
+
+// console.log(findLastBeatlesSong(abbeyRoadRecords));
